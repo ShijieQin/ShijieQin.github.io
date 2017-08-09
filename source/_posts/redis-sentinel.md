@@ -10,6 +10,8 @@ tags:
 categories:
 - redis
 ---
+### 更新日志
+- 修改redis-sentinel的配置文件, 添加sentinel auth-pass mymaster 123456， 解决新版redis, master宕机后不能自动切换的问题
 ### 前言
 该文章只是简单的记录redis sentinel的安装过程，并没有深度优化，只能保证安装完成后可以使用。后续再继续优化。
 master ip: 100.65.9.250
@@ -91,6 +93,7 @@ logfile "/var/log/sentinel.log"
 # sentinel需要监控的master/slaver信息，格式为sentinel monitor <mastername> <masterIP> <masterPort> <quorum>  
 # 其中<quorum>应该小于集群中slave的个数，当失效的节点数超过了<quorum>,则认为整个体系结构失效
 sentinel monitor mymaster 100.65.9.250 6379 2
+sentinel auth-pass mymaster 123456
 # master被当前sentinel实例认定为失效的间隔时间，格式为sentinel down-after-milliseconds <mastername> <milliseconds>
 sentinel down-after-milliseconds mymaster 10000
 # 当新master产生时，同时进行“slaveof”到新master并进行同步复制的slave个数  
