@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+
+    
+    
+    
+    
+    
+  <url>
+    <loc>https://shijieqin.github.io/2017/07/19/create-LVM-disk/</loc>
+    <lastmod>2017-07-19T08:24:04.000Z</lastmod>
+    <data>
+        <display>
+        <title>create LVM disk</title>
+        <pubTime>2017-07-19T08:24:04.000Z</pubTime>
+        
+        <tag>LVM</tag>
+         
+        <tag>DISK</tag>
+         
+        <tag>LINUX</tag>
+         
+         
+           
+             
+              <breadCrumb title="LINUX" url="https://shijieqin.github.io/categories/LINUX/"/>
+          
+             
+              <breadCrumb title="LVM" url="https://shijieqin.github.io/categories/LINUX/LVM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shijieqin.github.io/2017/07/11/OpenVpn4Centos/</loc>
+    <lastmod>2017-07-11T07:15:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>OpenVpn4Centos</title>
+        <pubTime>2017-07-11T07:15:14.000Z</pubTime>
+        
+        <tag>OpenVpn</tag>
+         
+         
+           
+             
+              <breadCrumb title="OpenVpn" url="https://shijieqin.github.io/categories/OpenVpn/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shijieqin.github.io/2017/06/21/s3fs-on-obs/</loc>
+    <lastmod>2017-06-21T08:47:14.000Z</lastmod>
+    <data>
+        <display>
+        <title>s3fs on obs</title>
+        <pubTime>2017-06-21T08:47:14.000Z</pubTime>
+        
+        <tag>华为云</tag>
+         
+        <tag>obs</tag>
+         
+         
+           
+             
+              <breadCrumb title="华为云" url="https://shijieqin.github.io/categories/%E5%8D%8E%E4%B8%BA%E4%BA%91/"/>
+          
+             
+              <breadCrumb title="obs" url="https://shijieqin.github.io/categories/%E5%8D%8E%E4%B8%BA%E4%BA%91/obs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shijieqin.github.io/2017/06/20/duplicity-install/</loc>
+    <lastmod>2017-06-20T10:17:26.000Z</lastmod>
+    <data>
+        <display>
+        <title>duplicity install</title>
+        <pubTime>2017-06-20T10:17:26.000Z</pubTime>
+        
+        <tag>duplicity</tag>
+         
+         
+           
+             
+              <breadCrumb title="duplicity" url="https://shijieqin.github.io/categories/duplicity/"/>
+          
+             
+              <breadCrumb title="install" url="https://shijieqin.github.io/categories/duplicity/install/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shijieqin.github.io/2017/06/15/redis-sentinel/</loc>
+    <lastmod>2017-06-15T05:37:36.000Z</lastmod>
+    <data>
+        <display>
+        <title>redis sentinel</title>
+        <pubTime>2017-06-15T05:37:36.000Z</pubTime>
+        
+        <tag>redis</tag>
+         
+        <tag>sentinel</tag>
+         
+        <tag>HA</tag>
+         
+         
+           
+             
+              <breadCrumb title="redis" url="https://shijieqin.github.io/categories/redis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shijieqin.github.io/2017/06/13/hwcloud-user-guid/</loc>
+    <lastmod>2017-06-13T01:56:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>hwcloud user guid</title>
+        <pubTime>2017-06-13T01:56:03.000Z</pubTime>
+        
+        <tag>华为云</tag>
+         
+        <tag>网络</tag>
+         
+        <tag>ELB</tag>
+         
+         
+           
+             
+              <breadCrumb title="华为云" url="https://shijieqin.github.io/categories/%E5%8D%8E%E4%B8%BA%E4%BA%91/"/>
+          
+             
+              <breadCrumb title="ELB" url="https://shijieqin.github.io/categories/%E5%8D%8E%E4%B8%BA%E4%BA%91/ELB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shijieqin.github.io/2017/06/09/first-blog-from-atom/</loc>
+    <lastmod>2017-06-09T13:26:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>first blog from atom</title>
+        <pubTime>2017-06-09T13:26:03.000Z</pubTime>
+        
+        <tag>test</tag>
+         
+         
+           
+             
+              <breadCrumb title="test" url="https://shijieqin.github.io/categories/test/"/>
+          
+        </display>
+    </data>
+    </url>
+
+</urlset>
