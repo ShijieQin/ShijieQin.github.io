@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="起因之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过sys / as sysdba登录服务器之后，使用alter user sys identified by newpassword修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。 原因是因为数据库回复后并没有生成对应的密码文件，因此sys用户无法作为sysdba登录">
+<meta name="description" content="起因之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过sys / as sysdba登录服务器之后，使用alter user sys identified by newpassword修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。">
 <meta name="keywords" content="oracle">
 <meta property="og:type" content="article">
 <meta property="og:title" content="rebuild oracle password file">
 <meta property="og:url" content="https://shijieqin.github.io/2017/10/19/rebuild-oracle-password-file/index.html">
 <meta property="og:site_name" content="ShijieQin">
-<meta property="og:description" content="起因之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过sys / as sysdba登录服务器之后，使用alter user sys identified by newpassword修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。 原因是因为数据库回复后并没有生成对应的密码文件，因此sys用户无法作为sysdba登录">
+<meta property="og:description" content="起因之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过sys / as sysdba登录服务器之后，使用alter user sys identified by newpassword修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-10-19T07:47:40.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rebuild oracle password file">
-<meta name="twitter:description" content="起因之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过sys / as sysdba登录服务器之后，使用alter user sys identified by newpassword修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。 原因是因为数据库回复后并没有生成对应的密码文件，因此sys用户无法作为sysdba登录">
+<meta name="twitter:description" content="起因之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过sys / as sysdba登录服务器之后，使用alter user sys identified by newpassword修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。">
 
 
 
@@ -446,6 +446,7 @@
 
       
         <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过<strong>sys / as sysdba</strong>登录服务器之后，使用<strong>alter user sys identified by newpassword</strong>修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。</p>
+<a id="more"></a>
 <p>原因是因为数据库回复后并没有生成对应的密码文件，因此sys用户无法作为sysdba登录，在开始之前需要先检查数据库的<strong>remote_login_passwordfile</strong>参数为<strong>exclusive</strong>，这也是oracle数据库的默认值。</p>
 <p>检查方式如下：</p>
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; show parameter remote_login_passwordfile</div></pre></td></tr></table></figure>
@@ -507,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/08/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/07/19/create-LVM-disk/" rel="next" title="create LVM disk">
+                <i class="fa fa-chevron-left"></i> create LVM disk
               </a>
             
           </div>
@@ -612,7 +613,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

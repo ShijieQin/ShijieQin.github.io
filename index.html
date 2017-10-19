@@ -448,172 +448,14 @@
 
       
         
-          
-            <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过<strong>sys / as sysdba</strong>登录服务器之后，使用<strong>alter user sys identified by newpassword</strong>修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。</p>
-<p>原因是因为数据库回复后并没有生成对应的密码文件，因此sys用户无法作为sysdba登录，在开始之前需要先检查数据库的<strong>remote_login_passwordfile</strong>参数为<strong>exclusive</strong>，这也是oracle数据库的默认值。</p>
-<p>检查方式如下：</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; show parameter remote_login_passwordfile</div></pre></td></tr></table></figure>
-<p>VALUE值为<strong>EXCLUSIVE</strong>即可</p>
-<p>关于密码文件：</p>
-<ol>
-<li>oracle官网解释说在用DBCA创建数据库对的时候会自动创建密码文件，所以用DBCA创建的数据库一般是没问题的，但是我这次是用rman恢复的实例，不知道是否我原库是RAC的原因，恢复完之后并没有密码文件</li>
-<li>具有管理员权限的角色(<code>SYSDBA</code>, <code>SYSOPER</code>, <code>SYSBACKUP</code>, <code>SYSDG</code>, or <code>SYSKM</code>)都会通过密码文件进行验证，而不是通过数据库来进行验证，但前提是该用户在数据库中存在。</li>
-<li>密码文件中保存的密码是区分大小写的</li>
-<li>RAC的密码文件是保存在ASM磁盘中的</li>
-</ol>
-<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>重建密码文件即可，其中密码文件的路径为<strong>$ORACLE_HOME/dbs/orapw<em>$instance_name</em></strong></p>
-<p>其中最后的文件名必须是<strong>orapw</strong>与<strong>instance_name</strong>拼接起来的名字，假设这里的instance_name为TEST</p>
-<p>使用如下命令重建密码文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">$</span> orapwd file="$ORACLE_HOME/dbs/orapwTEST" password=testtest</div></pre></td></tr></table></figure>
-<p>重建之后即可正常使用密码登录sys了，其中password指定的就是sys的密码</p>
-<p>验证密码文件是否生效可登陆数据库后同若如下命令验证</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; select * from v$pwfile_users;</div></pre></td></tr></table></figure>
-<p>如果密码文件没生效，则查出的结果为空，如果密码生效了，则查出的是记录在密码文件中的用户，默认仅有SYS用户。</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/10/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Shijie Qin">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/cat.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ShijieQin">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/08/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-08T19:37:15+08:00">
-                2017-10-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-            <!--noindex-->
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2017/10/08/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/08/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-              <!--/noindex-->
-            
-          
-
-          
-          
-             <span id="/2017/10/08/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过<strong>sys / as sysdba</strong>登录服务器之后，使用<strong>alter user sys identified by newpassword</strong>修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/19/rebuild-oracle-password-file/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1865,7 +1707,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
