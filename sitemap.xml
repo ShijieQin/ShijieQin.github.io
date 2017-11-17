@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://shijieqin.github.io/2017/10/19/rebuild-oracle-password-file/</loc>
+    <loc>https://shijieqin.github.io/2017/11/17/Performing-RMAN-Recovery/</loc>
     
-    <lastmod>2017-10-19T07:47:40.000Z</lastmod>
+    <lastmod>2017-11-17T03:14:10.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/categories/index.html</loc>
+    <loc>https://shijieqin.github.io/2017/10/19/rebuild-oracle-password-file/</loc>
     
-    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
+    <lastmod>2017-10-19T07:47:40.000Z</lastmod>
     
   </url>
   
@@ -24,6 +24,13 @@
   
   <url>
     <loc>https://shijieqin.github.io/tags/index.html</loc>
+    
+    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/categories/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     

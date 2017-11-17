@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>https://shijieqin.github.io/2017/11/17/Performing-RMAN-Recovery/</loc>
+    <lastmod>2017-11-17T03:14:10.000Z</lastmod>
+    <data>
+        <display>
+        <title>Performing RMAN Recovery</title>
+        <pubTime>2017-11-17T03:14:10.000Z</pubTime>
+        
+        <tag>oracle</tag>
+         
+        <tag>rman</tag>
+         
+         
+           
+             
+              <breadCrumb title="oracle" url="https://shijieqin.github.io/categories/oracle/"/>
+          
+             
+              <breadCrumb title="rman" url="https://shijieqin.github.io/categories/oracle/rman/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://shijieqin.github.io/2017/10/19/rebuild-oracle-password-file/</loc>
     <lastmod>2017-10-19T07:47:40.000Z</lastmod>
     <data>
