@@ -16,7 +16,7 @@
   <entry>
     <title><![CDATA[hwcloud上的Oracle RAC 12cR2安装手册(1)--环境的准备]]></title>
     <url>%2F2017%2F11%2F23%2Fhwcloud-oracle-rac%2F</url>
-    <content type="text"><![CDATA[网络网卡分配 网卡名 作用 网段 eth0 Public IP 192.168.1.0/24 eth1 NET IP 192.168.2.0/24 eth2 Private IP 192.168.1.0/24 这里我用了三块网卡： eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP eth1做NET IP的网卡，用来提供访问互联网的服务 eth2做Private的网卡，用来做节点之间的数据交互 IP段分配 Name node01 node02 Public IP 192.168.1.14 192.168.1.15 Private IP 192.168.1.16 192.168.1.17 Virtual IP 192.168.1.18 192.168.1.19 SCAN IP 192.168.1.20 192.168.1.21 192.168.1.22 NET IP 192.168.2.95 192.168.2.96 修改主机名参考[Centos6修改Hostname]]]></content>
+    <content type="text"><![CDATA[网络网卡分配 网卡名 作用 网段 eth0 Public IP 192.168.1.0/24 eth1 NET IP 192.168.2.0/24 eth2 Private IP 192.168.1.0/24 这里我用了三块网卡： eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP eth1做NET IP的网卡，用来提供访问互联网的服务 eth2做Private的网卡，用来做节点之间的数据交互 IP段分配 Name node01 node02 Public IP 192.168.1.14 192.168.1.15 Private IP 192.168.1.16 192.168.1.17 Virtual IP 192.168.1.18 192.168.1.19 SCAN IP 192.168.1.20 192.168.1.21 192.168.1.22 NET IP 192.168.2.95 192.168.2.96 修改主机名参考Centos6修改Hostname]]></content>
       <categories>
         <category>华为云</category>
         <category>oracle</category>
