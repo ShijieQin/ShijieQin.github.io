@@ -23,14 +23,11 @@
     <published>2017-11-24T05:52:09.000Z</published>
     <updated>2017-11-24T05:52:09.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="查看当前hostname"><a href="#查看当前hostname" class="headerlink" title="查看当前hostname"></a>查看当前hostname</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@node01 ~]# hostname</div><div class="line">node01.myCluster.com</div></pre></td></tr></table></figure><h3 id="临时修改hostname"><a href="#临时修改hostname" class="headerlink" title="临时修改hostname"></a>临时修改hostname</h3><p>命令格式为：</p><p><strong><em>hostname newhostname</em></strong></p><p>如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@node01 ~]# hostname node02.myCluster.com</div><div class="line">[root@node01 ~]# hostname</div><div class="line">node02.myCluster.com</div></pre></td></tr></table></figure><p>通过以上修改，只能临时生效，重启服务器后失效</p><h3 id="修改-etc-sysconfig-network"><a href="#修改-etc-sysconfig-network" class="headerlink" title="修改/etc/sysconfig/network"></a>修改/etc/sysconfig/network</h3><p>通过修改/etc/sysconfig/network中的hostname，实现永久生效</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORKING=yes</div><div class="line">HOSTNAME=node02.myCluster.com</div></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h3 id="查看当前hostname"><a href="#查看当前hostname" class="headerlink" title="查看当前hostname"></a>查看当前hostname</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@node01 ~]# hostname</div><div class="line">node01.myCluster.com</div></pre></td></tr></table></figure><a id="more"></a><h3 id="临时修改hostname"><a href="#临时修改hostname" class="headerlink" title="临时修改hostname"></a>临时修改hostname</h3><p>命令格式为：</p><p><strong><em>hostname newhostname</em></strong></p><p>如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@node01 ~]# hostname node02.myCluster.com</div><div class="line">[root@node01 ~]# hostname</div><div class="line">node02.myCluster.com</div></pre></td></tr></table></figure><p>通过以上修改，只能临时生效，重启服务器后失效</p><h3 id="修改-etc-sysconfig-network"><a href="#修改-etc-sysconfig-network" class="headerlink" title="修改/etc/sysconfig/network"></a>修改/etc/sysconfig/network</h3><p>通过修改/etc/sysconfig/network中的hostname，实现永久生效</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORKING=yes</div><div class="line">HOSTNAME=node02.myCluster.com</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h3 id=&quot;查看当前hostname&quot;&gt;&lt;a href=&quot;#查看当前hostname&quot; class=&quot;headerlink&quot; title=&quot;查看当前hostname&quot;&gt;&lt;/a&gt;查看当前hostname&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;
-      
+      &lt;h3 id=&quot;查看当前hostname&quot;&gt;&lt;a href=&quot;#查看当前hostname&quot; class=&quot;headerlink&quot; title=&quot;查看当前hostname&quot;&gt;&lt;/a&gt;查看当前hostname&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;[root@node01 ~]# hostname&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;node01.myCluster.com&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     
@@ -52,7 +49,7 @@
     <published>2017-11-23T09:15:01.000Z</published>
     <updated>2017-11-23T09:15:01.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><h4 id="网卡分配"><a href="#网卡分配" class="headerlink" title="网卡分配"></a>网卡分配</h4><table><thead><tr><th>网卡名</th><th>作用</th><th>网段</th></tr></thead><tbody><tr><td>eth0</td><td>Public IP</td><td>192.168.1.0/24</td></tr><tr><td>eth1</td><td>NET IP</td><td>192.168.2.0/24</td></tr><tr><td>eth2</td><td>Private IP</td><td>192.168.1.0/24</td></tr></tbody></table><p>这里我用了三块网卡：</p><ul><li>eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP</li><li>eth1做NET IP的网卡，用来提供访问互联网的服务</li><li>eth2做Private的网卡，用来做节点之间的数据交互</li></ul><a id="more"></a><h4 id="IP段分配"><a href="#IP段分配" class="headerlink" title="IP段分配"></a>IP段分配</h4><table><thead><tr><th>Name</th><th>node01</th><th>node02</th></tr></thead><tbody><tr><td>Public IP</td><td>192.168.1.14</td><td>192.168.1.15</td></tr><tr><td>Private IP</td><td>192.168.1.16</td><td>192.168.1.17</td></tr><tr><td>Virtual IP</td><td>192.168.1.18</td><td>192.168.1.19</td></tr><tr><td>SCAN IP</td><td>192.168.1.20</td><td>192.168.1.21</td></tr><tr><td></td><td>192.168.1.22</td><td></td></tr><tr><td>NET IP</td><td>192.168.2.95</td><td>192.168.2.96</td></tr></tbody></table><h4 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h4><p>参考/2017/11/24/Centos6修改Hostname/</p>]]></content>
+    <content type="html"><![CDATA[<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><h4 id="网卡分配"><a href="#网卡分配" class="headerlink" title="网卡分配"></a>网卡分配</h4><table><thead><tr><th>网卡名</th><th>作用</th><th>网段</th></tr></thead><tbody><tr><td>eth0</td><td>Public IP</td><td>192.168.1.0/24</td></tr><tr><td>eth1</td><td>NET IP</td><td>192.168.2.0/24</td></tr><tr><td>eth2</td><td>Private IP</td><td>192.168.1.0/24</td></tr></tbody></table><p>这里我用了三块网卡：</p><ul><li>eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP</li><li>eth1做NET IP的网卡，用来提供访问互联网的服务</li><li>eth2做Private的网卡，用来做节点之间的数据交互</li></ul><a id="more"></a><h4 id="IP段分配"><a href="#IP段分配" class="headerlink" title="IP段分配"></a>IP段分配</h4><table><thead><tr><th>Name</th><th>node01</th><th>node02</th></tr></thead><tbody><tr><td>Public IP</td><td>192.168.1.14</td><td>192.168.1.15</td></tr><tr><td>Private IP</td><td>192.168.1.16</td><td>192.168.1.17</td></tr><tr><td>Virtual IP</td><td>192.168.1.18</td><td>192.168.1.19</td></tr><tr><td>SCAN IP</td><td>192.168.1.20</td><td>192.168.1.21</td></tr><tr><td></td><td>192.168.1.22</td><td></td></tr><tr><td>NET IP</td><td>192.168.2.95</td><td>192.168.2.96</td></tr></tbody></table><h4 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h4><p>参考<a href="/2017/11/24/Centos6修改Hostname/" title="[Centos6修改Hostname]">[Centos6修改Hostname]</a></p>]]></content>
     
     <summary type="html">
     
@@ -98,9 +95,9 @@
       <category term="rac" scheme="https://shijieqin.github.io/categories/%E5%8D%8E%E4%B8%BA%E4%BA%91/oracle/rac/"/>
     
     
-      <category term="华为云" scheme="https://shijieqin.github.io/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91/"/>
-    
       <category term="oracle" scheme="https://shijieqin.github.io/tags/oracle/"/>
+    
+      <category term="华为云" scheme="https://shijieqin.github.io/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91/"/>
     
       <category term="rac" scheme="https://shijieqin.github.io/tags/rac/"/>
     

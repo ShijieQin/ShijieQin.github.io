@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="查看当前hostname12[root@node01 ~]# hostnamenode01.myCluster.com 临时修改hostname命令格式为： hostname newhostname 如下： 123[root@node01 ~]# hostname node02.myCluster.com[root@node01 ~]# hostnamenode02.myCluster.com 通">
+<meta name="description" content="查看当前hostname12[root@node01 ~]# hostnamenode01.myCluster.com">
 <meta name="keywords" content="linux,hostname">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Centos6修改Hostname">
 <meta property="og:url" content="https://shijieqin.github.io/2017/11/24/Centos6修改Hostname/index.html">
 <meta property="og:site_name" content="ShijieQin">
-<meta property="og:description" content="查看当前hostname12[root@node01 ~]# hostnamenode01.myCluster.com 临时修改hostname命令格式为： hostname newhostname 如下： 123[root@node01 ~]# hostname node02.myCluster.com[root@node01 ~]# hostnamenode02.myCluster.com 通">
+<meta property="og:description" content="查看当前hostname12[root@node01 ~]# hostnamenode01.myCluster.com">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-11-24T05:52:09.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Centos6修改Hostname">
-<meta name="twitter:description" content="查看当前hostname12[root@node01 ~]# hostnamenode01.myCluster.com 临时修改hostname命令格式为： hostname newhostname 如下： 123[root@node01 ~]# hostname node02.myCluster.com[root@node01 ~]# hostnamenode02.myCluster.com 通">
+<meta name="twitter:description" content="查看当前hostname12[root@node01 ~]# hostnamenode01.myCluster.com">
 
 
 
@@ -457,6 +457,7 @@
 
       
         <h3 id="查看当前hostname"><a href="#查看当前hostname" class="headerlink" title="查看当前hostname"></a>查看当前hostname</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@node01 ~]# hostname</div><div class="line">node01.myCluster.com</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="临时修改hostname"><a href="#临时修改hostname" class="headerlink" title="临时修改hostname"></a>临时修改hostname</h3><p>命令格式为：</p>
 <p><strong><em>hostname newhostname</em></strong></p>
 <p>如下：</p>
@@ -464,6 +465,7 @@
 <p>通过以上修改，只能临时生效，重启服务器后失效</p>
 <h3 id="修改-etc-sysconfig-network"><a href="#修改-etc-sysconfig-network" class="headerlink" title="修改/etc/sysconfig/network"></a>修改/etc/sysconfig/network</h3><p>通过修改/etc/sysconfig/network中的hostname，实现永久生效</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORKING=yes</div><div class="line">HOSTNAME=node02.myCluster.com</div></pre></td></tr></table></figure>
+
       
     </div>
 
