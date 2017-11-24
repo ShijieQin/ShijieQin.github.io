@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shijieqin.github.io/2017/11/24/Centos6%E4%BF%AE%E6%94%B9Hostname/</loc>
+    
+    <lastmod>2017-11-24T05:52:09.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/2017/11/23/hwcloud-oracle-rac/</loc>
+    
+    <lastmod>2017-11-23T09:15:01.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shijieqin.github.io/2017/11/17/Performing-RMAN-Recovery/</loc>
     
     <lastmod>2017-11-17T03:14:10.000Z</lastmod>
@@ -16,13 +30,6 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/tablet/index.html</loc>
-    
-    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://shijieqin.github.io/tags/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
@@ -30,14 +37,21 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/categories/index.html</loc>
+    <loc>https://shijieqin.github.io/about/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/about/index.html</loc>
+    <loc>https://shijieqin.github.io/tablet/index.html</loc>
+    
+    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/categories/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://shijieqin.github.io/"/>
-  <updated>2017-11-17T03:14:10.000Z</updated>
+  <updated>2017-11-24T05:52:09.000Z</updated>
   <id>https://shijieqin.github.io/</id>
   
   <author>
@@ -15,6 +15,96 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Centos6修改Hostname</title>
+    <link href="https://shijieqin.github.io/2017/11/24/Centos6%E4%BF%AE%E6%94%B9Hostname/"/>
+    <id>https://shijieqin.github.io/2017/11/24/Centos6修改Hostname/</id>
+    <published>2017-11-24T05:52:09.000Z</published>
+    <updated>2017-11-24T05:52:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="查看当前hostname"><a href="#查看当前hostname" class="headerlink" title="查看当前hostname"></a>查看当前hostname</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@node01 ~]# hostname</div><div class="line">node01.myCluster.com</div></pre></td></tr></table></figure><h3 id="临时修改hostname"><a href="#临时修改hostname" class="headerlink" title="临时修改hostname"></a>临时修改hostname</h3><p>命令格式为：</p><p><strong><em>hostname newhostname</em></strong></p><p>如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@node01 ~]# hostname node02.myCluster.com</div><div class="line">[root@node01 ~]# hostname</div><div class="line">node02.myCluster.com</div></pre></td></tr></table></figure><p>通过以上修改，只能临时生效，重启服务器后失效</p><h3 id="修改-etc-sysconfig-network"><a href="#修改-etc-sysconfig-network" class="headerlink" title="修改/etc/sysconfig/network"></a>修改/etc/sysconfig/network</h3><p>通过修改/etc/sysconfig/network中的hostname，实现永久生效</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">NETWORKING=yes</div><div class="line">HOSTNAME=node02.myCluster.com</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;查看当前hostname&quot;&gt;&lt;a href=&quot;#查看当前hostname&quot; class=&quot;headerlink&quot; title=&quot;查看当前hostname&quot;&gt;&lt;/a&gt;查看当前hostname&lt;/h3&gt;&lt;figure class=&quot;highlight shell&quot;&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="linux" scheme="https://shijieqin.github.io/categories/linux/"/>
+    
+      <category term="hostname" scheme="https://shijieqin.github.io/categories/linux/hostname/"/>
+    
+    
+      <category term="linux" scheme="https://shijieqin.github.io/tags/linux/"/>
+    
+      <category term="hostname" scheme="https://shijieqin.github.io/tags/hostname/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hwcloud上的Oracle RAC 12cR2安装手册(1)--环境的准备</title>
+    <link href="https://shijieqin.github.io/2017/11/23/hwcloud-oracle-rac/"/>
+    <id>https://shijieqin.github.io/2017/11/23/hwcloud-oracle-rac/</id>
+    <published>2017-11-23T09:15:01.000Z</published>
+    <updated>2017-11-23T09:15:01.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h3><h4 id="网卡分配"><a href="#网卡分配" class="headerlink" title="网卡分配"></a>网卡分配</h4><table><thead><tr><th>网卡名</th><th>作用</th><th>网段</th></tr></thead><tbody><tr><td>eth0</td><td>Public IP</td><td>192.168.1.0/24</td></tr><tr><td>eth1</td><td>NET IP</td><td>192.168.2.0/24</td></tr><tr><td>eth2</td><td>Private IP</td><td>192.168.1.0/24</td></tr></tbody></table><p>这里我用了三块网卡：</p><ul><li>eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP</li><li>eth1做NET IP的网卡，用来提供访问互联网的服务</li><li>eth2做Private的网卡，用来做节点之间的数据交互</li></ul><a id="more"></a><h4 id="IP段分配"><a href="#IP段分配" class="headerlink" title="IP段分配"></a>IP段分配</h4><table><thead><tr><th>Name</th><th>node01</th><th>node02</th></tr></thead><tbody><tr><td>Public IP</td><td>192.168.1.14</td><td>192.168.1.15</td></tr><tr><td>Private IP</td><td>192.168.1.16</td><td>192.168.1.17</td></tr><tr><td>Virtual IP</td><td>192.168.1.18</td><td>192.168.1.19</td></tr><tr><td>SCAN IP</td><td>192.168.1.20</td><td>192.168.1.21</td></tr><tr><td></td><td>192.168.1.22</td><td></td></tr><tr><td>NET IP</td><td>192.168.2.95</td><td>192.168.2.96</td></tr></tbody></table><h4 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h4><p>参考/2017/11/24/Centos6修改Hostname/</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;网络&quot;&gt;&lt;a href=&quot;#网络&quot; class=&quot;headerlink&quot; title=&quot;网络&quot;&gt;&lt;/a&gt;网络&lt;/h3&gt;&lt;h4 id=&quot;网卡分配&quot;&gt;&lt;a href=&quot;#网卡分配&quot; class=&quot;headerlink&quot; title=&quot;网卡分配&quot;&gt;&lt;/a&gt;网卡分配&lt;/h4&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;网卡名&lt;/th&gt;
+&lt;th&gt;作用&lt;/th&gt;
+&lt;th&gt;网段&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;eth0&lt;/td&gt;
+&lt;td&gt;Public IP&lt;/td&gt;
+&lt;td&gt;192.168.1.0/24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;eth1&lt;/td&gt;
+&lt;td&gt;NET IP&lt;/td&gt;
+&lt;td&gt;192.168.2.0/24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;eth2&lt;/td&gt;
+&lt;td&gt;Private IP&lt;/td&gt;
+&lt;td&gt;192.168.1.0/24&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;这里我用了三块网卡：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP&lt;/li&gt;
+&lt;li&gt;eth1做NET IP的网卡，用来提供访问互联网的服务&lt;/li&gt;
+&lt;li&gt;eth2做Private的网卡，用来做节点之间的数据交互&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="华为云" scheme="https://shijieqin.github.io/categories/%E5%8D%8E%E4%B8%BA%E4%BA%91/"/>
+    
+      <category term="oracle" scheme="https://shijieqin.github.io/categories/%E5%8D%8E%E4%B8%BA%E4%BA%91/oracle/"/>
+    
+      <category term="rac" scheme="https://shijieqin.github.io/categories/%E5%8D%8E%E4%B8%BA%E4%BA%91/oracle/rac/"/>
+    
+    
+      <category term="华为云" scheme="https://shijieqin.github.io/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91/"/>
+    
+      <category term="oracle" scheme="https://shijieqin.github.io/tags/oracle/"/>
+    
+      <category term="rac" scheme="https://shijieqin.github.io/tags/rac/"/>
+    
+  </entry>
   
   <entry>
     <title>Performing RMAN Recovery</title>
