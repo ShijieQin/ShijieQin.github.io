@@ -5,12 +5,12 @@
     <url>%2F2017%2F11%2F24%2FCentos6%E4%BF%AE%E6%94%B9Hostname%2F</url>
     <content type="text"><![CDATA[查看当前hostname12[root@node01 ~]# hostnamenode01.myCluster.com 临时修改hostname命令格式为： hostname newhostname 如下： 123[root@node01 ~]# hostname node02.myCluster.com[root@node01 ~]# hostnamenode02.myCluster.com 通过以上修改，只能临时生效，重启服务器后失效 修改/etc/sysconfig/network通过修改/etc/sysconfig/network中的hostname，实现永久生效 12NETWORKING=yesHOSTNAME=node02.myCluster.com]]></content>
       <categories>
-        <category>linux</category>
+        <category>LINUX</category>
         <category>hostname</category>
       </categories>
       <tags>
-        <tag>linux</tag>
         <tag>hostname</tag>
+        <tag>LINUX</tag>
       </tags>
   </entry>
   <entry>
@@ -23,7 +23,6 @@
       </categories>
       <tags>
         <tag>oracle</tag>
-        <tag>华为云</tag>
         <tag>rac</tag>
       </tags>
   </entry>

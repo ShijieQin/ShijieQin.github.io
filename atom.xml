@@ -31,14 +31,14 @@
     
     </summary>
     
-      <category term="linux" scheme="https://shijieqin.github.io/categories/linux/"/>
+      <category term="LINUX" scheme="https://shijieqin.github.io/categories/LINUX/"/>
     
-      <category term="hostname" scheme="https://shijieqin.github.io/categories/linux/hostname/"/>
+      <category term="hostname" scheme="https://shijieqin.github.io/categories/LINUX/hostname/"/>
     
-    
-      <category term="linux" scheme="https://shijieqin.github.io/tags/linux/"/>
     
       <category term="hostname" scheme="https://shijieqin.github.io/tags/hostname/"/>
+    
+      <category term="LINUX" scheme="https://shijieqin.github.io/tags/LINUX/"/>
     
   </entry>
   
@@ -94,8 +94,6 @@
     
     
       <category term="oracle" scheme="https://shijieqin.github.io/tags/oracle/"/>
-    
-      <category term="华为云" scheme="https://shijieqin.github.io/tags/%E5%8D%8E%E4%B8%BA%E4%BA%91/"/>
     
       <category term="rac" scheme="https://shijieqin.github.io/tags/rac/"/>
     
