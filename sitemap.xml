@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shijieqin.github.io/2017/11/27/hwcloud%E4%B8%8A%E7%9A%84Oracle-RAC-12cR2%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C-2-grid%E7%9A%84%E5%AE%89%E8%A3%85/</loc>
+    
+    <lastmod>2017-11-27T08:02:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shijieqin.github.io/2017/11/24/Centos6%E4%BF%AE%E6%94%B9Hostname/</loc>
     
     <lastmod>2017-11-24T05:52:09.000Z</lastmod>
@@ -37,13 +44,6 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/tablet/index.html</loc>
-    
-    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://shijieqin.github.io/categories/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
@@ -52,6 +52,13 @@
   
   <url>
     <loc>https://shijieqin.github.io/about/index.html</loc>
+    
+    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/tablet/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     
