@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shijieqin.github.io/2017/11/27/Centos6%E5%AE%89%E8%A3%85ASMLIB/</loc>
+    
+    <lastmod>2017-11-27T08:30:19.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/2017/11/27/centos6-8%E8%B0%83%E6%95%B4swap%E7%A9%BA%E9%97%B4/</loc>
+    
+    <lastmod>2017-11-27T08:20:49.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shijieqin.github.io/2017/11/27/hwcloud%E4%B8%8A%E7%9A%84Oracle-RAC-12cR2%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C-2-grid%E7%9A%84%E5%AE%89%E8%A3%85/</loc>
     
     <lastmod>2017-11-27T08:02:02.000Z</lastmod>
@@ -44,7 +58,7 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/categories/index.html</loc>
+    <loc>https://shijieqin.github.io/tablet/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     
@@ -58,7 +72,7 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/tablet/index.html</loc>
+    <loc>https://shijieqin.github.io/categories/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     

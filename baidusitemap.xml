@@ -4,6 +4,56 @@
 
     
   <url>
+    <loc>https://shijieqin.github.io/2017/11/27/Centos6%E5%AE%89%E8%A3%85ASMLIB/</loc>
+    <lastmod>2017-11-27T08:30:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>Centos6安装ASMLIB</title>
+        <pubTime>2017-11-27T08:30:19.000Z</pubTime>
+        
+        <tag>oracle</tag>
+         
+        <tag>ASM</tag>
+         
+         
+           
+             
+              <breadCrumb title="oracle" url="https://shijieqin.github.io/categories/oracle/"/>
+          
+             
+              <breadCrumb title="ASM" url="https://shijieqin.github.io/categories/oracle/ASM/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shijieqin.github.io/2017/11/27/centos6-8%E8%B0%83%E6%95%B4swap%E7%A9%BA%E9%97%B4/</loc>
+    <lastmod>2017-11-27T08:20:49.000Z</lastmod>
+    <data>
+        <display>
+        <title>centos6.8调整swap空间</title>
+        <pubTime>2017-11-27T08:20:49.000Z</pubTime>
+        
+        <tag>LINUX</tag>
+         
+        <tag>swap</tag>
+         
+         
+           
+             
+              <breadCrumb title="LINUX" url="https://shijieqin.github.io/categories/LINUX/"/>
+          
+             
+              <breadCrumb title="swap" url="https://shijieqin.github.io/categories/LINUX/swap/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://shijieqin.github.io/2017/11/27/hwcloud%E4%B8%8A%E7%9A%84Oracle-RAC-12cR2%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C-2-grid%E7%9A%84%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2017-11-27T08:02:02.000Z</lastmod>
     <data>
