@@ -643,7 +643,8 @@
 <p>在node02上，oracle用户，尝试登录node01验证</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[oracle@node02 ~]$ ssh node01 hostname</div><div class="line">node01.myCluster.com</div><div class="line">[oracle@node02 ~]$ ssh node01-priv hostname</div><div class="line">node01.myCluster.com</div></pre></td></tr></table></figure>
 <h3 id="配置存储"><a href="#配置存储" class="headerlink" title="配置存储"></a>配置存储</h3><p>在华为云控制台选购磁盘，共享模式选择共享，磁盘模式选择VBD(这里使用的是VBD的磁盘，使用oracleasm来配置共享磁盘)</p>
-<h4 id="安装ASMLIB"><a href="#安装ASMLIB" class="headerlink" title="安装ASMLIB"></a>安装ASMLIB</h4><h4 id="创建分区"><a href="#创建分区" class="headerlink" title="创建分区"></a>创建分区</h4><p><strong><em>注：</em></strong></p>
+<h4 id="安装ASMLIB"><a href="#安装ASMLIB" class="headerlink" title="安装ASMLIB"></a>安装ASMLIB</h4><a href="/2017/11/27/abc/" title="abc">abc</a>
+<h4 id="创建分区"><a href="#创建分区" class="headerlink" title="创建分区"></a>创建分区</h4><p><strong><em>注：</em></strong></p>
 <ul>
 <li><strong><em>我的共享磁盘挂载点为/dev/xvdc</em></strong></li>
 <li><strong><em>OCR_VOT_GIMR磁盘组和DATA磁盘组的冗余类型都选择为External</em></strong></li>
