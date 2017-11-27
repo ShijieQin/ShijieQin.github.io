@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title><![CDATA[Centos6安装ASMLIB]]></title>
-    <url>%2F2017%2F11%2F27%2FCentos6%E5%AE%89%E8%A3%85ASMLIB%2F</url>
+    <url>%2F2017%2F11%2F27%2FCentos-Install-ASMLIB%2F</url>
     <content type="text"><![CDATA[###Centos6安装ASMLIB 我这里操作系统用的是Centos 6.8，Centos 6系列和Redhat 6系列都可以按下面的方式安装，至于其他版本的下载连接，参考地址：http://www.oracle.com/technetwork/server-storage/linux/asmlib/index-101839.html?ssSourceSiteId=ocomen 注：以下操作需要在node01和node02两个节点上操作 ####下载相关软件 12[root@node01 ~]# wget http://oss.oracle.com/projects/oracleasm-support/dist/files/RPMS/rhel6/amd64/2.1.8/oracleasm-support-2.1.8-1.el6.x86_64.rpm[root@node01 ~]# wget http://download.oracle.com/otn_software/asmlib/oracleasmlib-2.0.4-1.el6.x86_64.rpm ####使用yum自动安装相关依赖 1[root@node01 ~]# yum install oracleasm ####使用yum本地安装下载好的两个安装包 12[root@node01 ~]# yum localinstall oracleasmlib-2.0.4-1.el6.x86_64.rpm[root@node01 ~]# yum localinstall oracleasm-support-2.1.8-1.el6.x86_64.rpm ####配置oracleasm服务 123456789101112[root@node01 ~]# oracleasm configure -iConfiguring the Oracle ASM library driver.This will configure the on-boot properties of the Oracle ASM librarydriver. The following questions will determine whether the driver isloaded on boot and what permissions it will have. The current valueswill be shown in brackets ('[]'). Hitting &lt;ENTER&gt; without typing ananswer will keep that current value. Ctrl-C will abort.Default user to own the driver interface []: gridDefault group to own the driver interface []: asmadminStart Oracle ASM library driver on boot (y/n) [n]: yScan for Oracle ASM disks on boot (y/n) [y]: yWriting Oracle ASM library driver configuration: done ####启动oracleasm 1[root@node01 ~]# /etc/init.d/oracleasm enable]]></content>
       <categories>
         <category>oracle</category>
