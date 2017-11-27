@@ -9,8 +9,8 @@
         <category>hostname</category>
       </categories>
       <tags>
-        <tag>hostname</tag>
         <tag>LINUX</tag>
+        <tag>hostname</tag>
       </tags>
   </entry>
   <entry>
@@ -46,9 +46,9 @@
         <category>LVM</category>
       </categories>
       <tags>
+        <tag>LINUX</tag>
         <tag>LVM</tag>
         <tag>DISK</tag>
-        <tag>LINUX</tag>
       </tags>
   </entry>
   <entry>

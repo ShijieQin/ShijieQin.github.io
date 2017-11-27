@@ -36,9 +36,9 @@
       <category term="hostname" scheme="https://shijieqin.github.io/categories/LINUX/hostname/"/>
     
     
-      <category term="hostname" scheme="https://shijieqin.github.io/tags/hostname/"/>
-    
       <category term="LINUX" scheme="https://shijieqin.github.io/tags/LINUX/"/>
+    
+      <category term="hostname" scheme="https://shijieqin.github.io/tags/hostname/"/>
     
   </entry>
   
@@ -113,11 +113,11 @@
       <category term="LVM" scheme="https://shijieqin.github.io/categories/LINUX/LVM/"/>
     
     
+      <category term="LINUX" scheme="https://shijieqin.github.io/tags/LINUX/"/>
+    
       <category term="LVM" scheme="https://shijieqin.github.io/tags/LVM/"/>
     
       <category term="DISK" scheme="https://shijieqin.github.io/tags/DISK/"/>
-    
-      <category term="LINUX" scheme="https://shijieqin.github.io/tags/LINUX/"/>
     
   </entry>
   
