@@ -29,7 +29,7 @@
   <entry>
     <title><![CDATA[hwcloud上的Oracle RAC 12cR2安装手册(2)--grid的安装]]></title>
     <url>%2F2017%2F11%2F27%2Fhwcloud%E4%B8%8A%E7%9A%84Oracle-RAC-12cR2%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C-2-grid%E7%9A%84%E5%AE%89%E8%A3%85%2F</url>
-    <content type="text"><![CDATA[安装CVUnode01上，root用户 执行如下命令： 12cd /u01/app/12.2.0/grid/cv/rpm/rpm -ivh cvuqdisk-1.0.10-1.rpm node01上，grid用户 执行如下命令： 12cd /u01/app/12.2.0/grid/./runcluvfy.sh stage -pre crsinst -n node01,node02 -fixup -verbose]]></content>
+    <content type="text"><![CDATA[安装CVUnode01上，root用户 执行如下命令： 12cd /u01/app/12.2.0/grid/cv/rpm/rpm -ivh cvuqdisk-1.0.10-1.rpm node01上，grid用户 执行如下命令： 12cd /u01/app/12.2.0/grid/./runcluvfy.sh stage -pre crsinst -n node01,node02 -fixup -verbose 返回结果如下，则表示配置正确 12345Pre-check for cluster services setup was successful.CVU operation performed: stage -pre crsinstDate: Nov 27, 2017 6:26:58 PMCVU home: /u01/app/12.2.0/grid/User: grid 如果有报错，则按照提示修复错误即可 安装网格基础设施(grid)注： 安装前需保证node02上ORACLE_BASE和ORACLE_HOME目录为空，如果报错，可以手动清理掉 安装前保证node01上的ORACLE_BASE的目录为空，如果报错，可以手动清理掉 node01上，grid用户 12cd /u01/app/12.2.0/grid/./gridSetup.sh]]></content>
       <categories>
         <category>oracle</category>
         <category>rac</category>
