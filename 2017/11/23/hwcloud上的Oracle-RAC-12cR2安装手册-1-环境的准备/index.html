@@ -97,18 +97,18 @@
 
 
 
-<meta name="description" content="网络网卡分配   网卡名 作用 网段     eth0 Public IP 192.168.1.0/24   eth1 NET IP 192.168.2.0/24   eth2 Private IP 192.168.6.0/24    这里我用了三块网卡：  eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP eth1做NET IP的网卡，用来提供访问互联网的服">
+<meta name="description" content="网络网卡分配   网卡名 作用 网段     eth0 Public IP 192.168.1.0/24   eth1 NET IP 192.168.2.0/24   eth2 Private IP 192.168.6.0/24    这里我用了三块网卡：  eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP  eth1做NET IP的网卡，用来提供访问互联网的">
 <meta name="keywords" content="oracle,rac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hwcloud上的Oracle RAC 12cR2安装手册(1)--环境的准备">
 <meta property="og:url" content="https://shijieqin.github.io/2017/11/23/hwcloud上的Oracle-RAC-12cR2安装手册-1-环境的准备/index.html">
 <meta property="og:site_name" content="ShijieQin">
-<meta property="og:description" content="网络网卡分配   网卡名 作用 网段     eth0 Public IP 192.168.1.0/24   eth1 NET IP 192.168.2.0/24   eth2 Private IP 192.168.6.0/24    这里我用了三块网卡：  eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP eth1做NET IP的网卡，用来提供访问互联网的服">
+<meta property="og:description" content="网络网卡分配   网卡名 作用 网段     eth0 Public IP 192.168.1.0/24   eth1 NET IP 192.168.2.0/24   eth2 Private IP 192.168.6.0/24    这里我用了三块网卡：  eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP  eth1做NET IP的网卡，用来提供访问互联网的">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:updated_time" content="2017-11-23T09:15:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hwcloud上的Oracle RAC 12cR2安装手册(1)--环境的准备">
-<meta name="twitter:description" content="网络网卡分配   网卡名 作用 网段     eth0 Public IP 192.168.1.0/24   eth1 NET IP 192.168.2.0/24   eth2 Private IP 192.168.6.0/24    这里我用了三块网卡：  eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP eth1做NET IP的网卡，用来提供访问互联网的服">
+<meta name="twitter:description" content="网络网卡分配   网卡名 作用 网段     eth0 Public IP 192.168.1.0/24   eth1 NET IP 192.168.2.0/24   eth2 Private IP 192.168.6.0/24    这里我用了三块网卡：  eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP  eth1做NET IP的网卡，用来提供访问互联网的">
 
 
 
@@ -484,9 +484,13 @@
 </table>
 <p>这里我用了三块网卡：</p>
 <ul>
-<li>eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP</li>
-<li>eth1做NET IP的网卡，用来提供访问互联网的服务</li>
-<li>eth2做Private的网卡，用来做节点之间的数据交互</li>
+<li><p>eth0做Public IP的网卡，同时会绑定Virtual IP 和 SCAN IP</p>
+</li>
+<li><p>eth1做NET IP的网卡，用来提供访问互联网的服务</p>
+</li>
+<li><p>eth2做Private的网卡，用来做节点之间的数据交互</p>
+<p><strong><em>注：在华为云控制台关闭node01节点和node02节点的Public IP网卡的<code>源/目的检查</code>，否则虚拟ip是不通的</em></strong></p>
+</li>
 </ul>
 <a id="more"></a>
 <h4 id="IP段分配"><a href="#IP段分配" class="headerlink" title="IP段分配"></a>IP段分配</h4><table>
@@ -530,6 +534,7 @@
 </tr>
 </tbody>
 </table>
+<h4 id="安全组"><a href="#安全组" class="headerlink" title="安全组"></a>安全组</h4><p>修改华为云安全组，放行169.254.0.0/16 网段</p>
 <h4 id="修改主机名"><a href="#修改主机名" class="headerlink" title="修改主机名"></a>修改主机名</h4><p>参考<a href="/2017/11/24/Centos6修改Hostname/" title="Centos6修改Hostname">Centos6修改Hostname</a></p>
 <p>分别将两个节点的主机名改为node01.myCluster.com、node02.myCluster.com</p>
 <h4 id="配置host解析"><a href="#配置host解析" class="headerlink" title="配置host解析"></a>配置host解析</h4><p>修改node1和node2的hosts文件，添加如下内容</p>
@@ -817,7 +822,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -923,7 +928,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络"><span class="nav-number">1.</span> <span class="nav-text">网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网卡分配"><span class="nav-number">1.1.</span> <span class="nav-text">网卡分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP段分配"><span class="nav-number">1.2.</span> <span class="nav-text">IP段分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改主机名"><span class="nav-number">1.3.</span> <span class="nav-text">修改主机名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置host解析"><span class="nav-number">1.4.</span> <span class="nav-text">配置host解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭libvirt的虚拟网卡功能"><span class="nav-number">1.5.</span> <span class="nav-text">关闭libvirt的虚拟网卡功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用ZEROCONF"><span class="nav-number">1.6.</span> <span class="nav-text">禁用ZEROCONF</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统配置"><span class="nav-number">2.</span> <span class="nav-text">操作系统配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖"><span class="nav-number">2.1.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置swap"><span class="nav-number">2.2.</span> <span class="nav-text">配置swap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置内核参数"><span class="nav-number">2.3.</span> <span class="nav-text">配置内核参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭NTP"><span class="nav-number">2.4.</span> <span class="nav-text">关闭NTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置PAM"><span class="nav-number">2.5.</span> <span class="nav-text">配置PAM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#limit文件"><span class="nav-number">2.6.</span> <span class="nav-text">limit文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭SELinux"><span class="nav-number">2.7.</span> <span class="nav-text">关闭SELinux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建用户、组、文件夹"><span class="nav-number">2.8.</span> <span class="nav-text">创建用户、组、文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.9.</span> <span class="nav-text">配置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置grid用户的环境变量"><span class="nav-number">2.9.1.</span> <span class="nav-text">配置grid用户的环境变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置oracle的环境变量"><span class="nav-number">2.9.2.</span> <span class="nav-text">配置oracle的环境变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH互信"><span class="nav-number">3.</span> <span class="nav-text">配置SSH互信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置存储"><span class="nav-number">4.</span> <span class="nav-text">配置存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装ASMLIB"><span class="nav-number">4.1.</span> <span class="nav-text">安装ASMLIB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建分区"><span class="nav-number">4.2.</span> <span class="nav-text">创建分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建磁盘组"><span class="nav-number">4.3.</span> <span class="nav-text">创建磁盘组</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络"><span class="nav-number">1.</span> <span class="nav-text">网络</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网卡分配"><span class="nav-number">1.1.</span> <span class="nav-text">网卡分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP段分配"><span class="nav-number">1.2.</span> <span class="nav-text">IP段分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安全组"><span class="nav-number">1.3.</span> <span class="nav-text">安全组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改主机名"><span class="nav-number">1.4.</span> <span class="nav-text">修改主机名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置host解析"><span class="nav-number">1.5.</span> <span class="nav-text">配置host解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭libvirt的虚拟网卡功能"><span class="nav-number">1.6.</span> <span class="nav-text">关闭libvirt的虚拟网卡功能</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#禁用ZEROCONF"><span class="nav-number">1.7.</span> <span class="nav-text">禁用ZEROCONF</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作系统配置"><span class="nav-number">2.</span> <span class="nav-text">操作系统配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装依赖"><span class="nav-number">2.1.</span> <span class="nav-text">安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置swap"><span class="nav-number">2.2.</span> <span class="nav-text">配置swap</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置内核参数"><span class="nav-number">2.3.</span> <span class="nav-text">配置内核参数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭NTP"><span class="nav-number">2.4.</span> <span class="nav-text">关闭NTP</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置PAM"><span class="nav-number">2.5.</span> <span class="nav-text">配置PAM</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#limit文件"><span class="nav-number">2.6.</span> <span class="nav-text">limit文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭SELinux"><span class="nav-number">2.7.</span> <span class="nav-text">关闭SELinux</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建用户、组、文件夹"><span class="nav-number">2.8.</span> <span class="nav-text">创建用户、组、文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置环境变量"><span class="nav-number">2.9.</span> <span class="nav-text">配置环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#配置grid用户的环境变量"><span class="nav-number">2.9.1.</span> <span class="nav-text">配置grid用户的环境变量</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#配置oracle的环境变量"><span class="nav-number">2.9.2.</span> <span class="nav-text">配置oracle的环境变量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置SSH互信"><span class="nav-number">3.</span> <span class="nav-text">配置SSH互信</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置存储"><span class="nav-number">4.</span> <span class="nav-text">配置存储</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装ASMLIB"><span class="nav-number">4.1.</span> <span class="nav-text">安装ASMLIB</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建分区"><span class="nav-number">4.2.</span> <span class="nav-text">创建分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建磁盘组"><span class="nav-number">4.3.</span> <span class="nav-text">创建磁盘组</span></a></li></ol></li></ol></div>
             
 
           </div>
