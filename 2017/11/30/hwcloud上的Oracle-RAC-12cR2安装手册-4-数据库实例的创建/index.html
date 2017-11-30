@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="oracle,rac," />
 
 
 
@@ -97,14 +97,41 @@
 
 
 
+<meta name="description" content="node01上，oracle用户，执行dbca，如下： 1[oracle@node01 ~]$ dbca 安装过程如下：">
+<meta name="keywords" content="oracle,rac">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建">
 <meta property="og:url" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/index.html">
 <meta property="og:site_name" content="ShijieQin">
+<meta property="og:description" content="node01上，oracle用户，执行dbca，如下： 1[oracle@node01 ~]$ dbca 安装过程如下：">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step1.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step2.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step3.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step4.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step5.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step6.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step7-2.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step8.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-2.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-3.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-4.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step10.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step11.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step12.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step12-2.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13-2.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13-3.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step14.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step15.png">
+<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step16.png">
 <meta property="og:updated_time" content="2017-11-30T05:50:02.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建">
+<meta name="twitter:description" content="node01上，oracle用户，执行dbca，如下： 1[oracle@node01 ~]$ dbca 安装过程如下：">
+<meta name="twitter:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step1.png">
 
 
 
@@ -372,6 +399,39 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/rac/" itemprop="url" rel="index">
+                    <span itemprop="name">rac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -419,7 +479,45 @@
       
 
       
-        <a id="more"></a>
+        <p>node01上，oracle用户，执行<code>dbca</code>，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ dbca</div></pre></td></tr></table></figure>
+<p>安装过程如下：</p>
+<a id="more"></a>
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step1.png" alt="创建一个数据库" title="创建一个数据库">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step2.png" alt="高级配置" title="高级配置">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step3.png" alt="安装RAC，选择自定义数据库" title="安装RAC，选择自定义数据库">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step4.png" alt="选择所有节点" title="选择所有节点">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step5.png" alt="设置全局数据库名和SID前缀，选择创建空白容器数据库" title="设置全局数据库名和SID前缀，选择创建空白容器数据库">
+<p><strong><em>注：</em></strong><br><strong><em>此处的SID前缀需要与环境变量里的ORACLE_SID对应：</em></strong><br><strong><em>例如，SID前缀设置orcl，ORACLE_SID需要设置为orcl1和orcl2。</em></strong></p>
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step6.png" alt="选择ASM存储类型并选择DATA磁盘组" title="选择ASM存储类型并选择DATA磁盘组">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step7-2.png" alt="启用快速闪回去，并选择DATA磁盘组，大小根据实际需求设置，忽略提示，直接确定" title="启用快速闪回去，并选择DATA磁盘组，大小根据实际需求设置，忽略提示，直接确定">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step8.png" alt="默认" title="默认">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9.png" alt="选择自动共享内存管理，并设置MEMORY_TARGET，建议物理内存的80%" title="选择自动共享内存管理，并设置MEMORY_TARGET，建议物理内存的80%">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-2.png" alt="块大小设置为32768B，进程数设置为1500" title="块大小设置为32768B，进程数设置为1500">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-3.png" alt="字符集选择AL32UTF8" title="字符集选择AL32UTF8">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-4.png" alt="选择专用服务器模式" title="选择专用服务器模式">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step10.png" alt="不启用EM" title="不启用EM">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step11.png" alt="使用统一密码" title="使用统一密码">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step12.png" alt="创建数据库" title="创建数据库">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step12-2.png" alt="忽略警告，确认" title="忽略警告，确认">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13.png" alt="检查" title="检查">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13-2.png" alt="忽略" title="忽略">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13-3.png" alt="确认" title="确认">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step14.png" alt="配置完成" title="配置完成">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step15.png" alt="安装进行中" title="安装进行中">
+<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step16.png" alt="安装完成，关闭" title="安装完成，关闭">
+<p>node01、node02上，oracle用户，执行<code>lsnrctl status</code>查看实例运行状态</p>
+<p>node01：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ lsnrctl status</div><div class="line">LSNRCTL for Linux: Version 12.2.0.1.0 - Production on 30-NOV-2017 17:27:08</div><div class="line">Copyright (c) 1991, 2016, Oracle.  All rights reserved.</div><div class="line">Connecting to (ADDRESS=(PROTOCOL=tcp)(HOST=)(PORT=1521))</div><div class="line">STATUS of the LISTENER</div><div class="line">------------------------</div><div class="line">Alias                     LISTENER</div><div class="line">Version                   TNSLSNR for Linux: Version 12.2.0.1.0 - Production</div><div class="line">Start Date                29-NOV-2017 18:45:30</div><div class="line">Uptime                    0 days 22 hr. 41 min. 37 sec</div><div class="line">Trace Level               off</div><div class="line">Security                  ON: Local OS Authentication</div><div class="line">SNMP                      OFF</div><div class="line">Listener Parameter File   /u01/app/12.2.0/grid/network/admin/listener.ora</div><div class="line">Listener Log File         /u01/app/grid/diag/tnslsnr/node01/listener/alert/log.xml</div><div class="line">Listening Endpoints Summary...</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=LISTENER)))</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.1.14)(PORT=1521)))</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.1.17)(PORT=1521)))</div><div class="line">Services Summary...</div><div class="line">Service &quot;+ASM&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;+ASM_DATA&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;+ASM_OCR_VOT_GIMR&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;orcl.myCluster.com&quot; has 1 instance(s).</div><div class="line">  Instance &quot;orcl1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;orclXDB.myCluster.com&quot; has 1 instance(s).</div><div class="line">  Instance &quot;orcl1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">The command completed successfully</div></pre></td></tr></table></figure>
+<p>node02：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">[oracle@node02 ~]$ lsnrctl status</div><div class="line">LSNRCTL for Linux: Version 12.2.0.1.0 - Production on 30-NOV-2017 17:29:46</div><div class="line">Copyright (c) 1991, 2016, Oracle.  All rights reserved.</div><div class="line">Connecting to (ADDRESS=(PROTOCOL=tcp)(HOST=)(PORT=1521))</div><div class="line">STATUS of the LISTENER</div><div class="line">------------------------</div><div class="line">Alias                     LISTENER</div><div class="line">Version                   TNSLSNR for Linux: Version 12.2.0.1.0 - Production</div><div class="line">Start Date                29-NOV-2017 18:57:02</div><div class="line">Uptime                    0 days 22 hr. 32 min. 43 sec</div><div class="line">Trace Level               off</div><div class="line">Security                  ON: Local OS Authentication</div><div class="line">SNMP                      OFF</div><div class="line">Listener Parameter File   /u01/app/12.2.0/grid/network/admin/listener.ora</div><div class="line">Listener Log File         /u01/app/grid/diag/tnslsnr/node02/listener/alert/log.xml</div><div class="line">Listening Endpoints Summary...</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=LISTENER)))</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.1.15)(PORT=1521)))</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.1.18)(PORT=1521)))</div><div class="line">Services Summary...</div><div class="line">Service &quot;+ASM&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;+ASM_DATA&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;+ASM_OCR_VOT_GIMR&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;orcl.myCluster.com&quot; has 1 instance(s).</div><div class="line">  Instance &quot;orcl2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;orclXDB.myCluster.com&quot; has 1 instance(s).</div><div class="line">  Instance &quot;orcl2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">The command completed successfully</div></pre></td></tr></table></figure>
+<p>node01、node02上，oracle用户，执行<code>sqlplus / as sysdba</code>尝试登录数据库，并执行<code>show pdbs;</code>查看pdb状态</p>
+<p>node01：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ sqlplus / as sysdba</div><div class="line">SQL*Plus: Release 12.2.0.1.0 Production on Thu Nov 30 17:37:41 2017</div><div class="line">Copyright (c) 1982, 2016, Oracle.  All rights reserved.</div><div class="line">Connected to:</div><div class="line">Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production</div><div class="line">SQL&gt; show pdbs;</div><div class="line">    CON_ID CON_NAME                       OPEN MODE  RESTRICTED</div><div class="line">---------- ------------------------------ ---------- ----------</div><div class="line">         2 PDB$SEED                       READ ONLY  NO</div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<p>node02:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[oracle@node02 ~]$ sqlplus / as sysdba</div><div class="line">SQL*Plus: Release 12.2.0.1.0 Production on Thu Nov 30 17:39:15 2017</div><div class="line">Copyright (c) 1982, 2016, Oracle.  All rights reserved.</div><div class="line">Connected to:</div><div class="line">Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production</div><div class="line">SQL&gt; show pdbs;</div><div class="line">    CON_ID CON_NAME                       OPEN MODE  RESTRICTED</div><div class="line">---------- ------------------------------ ---------- ----------</div><div class="line">         2 PDB$SEED                       READ ONLY  NO</div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<p>至此，完成了数据库实例的创建，ORACLE RAC安装完成，后面测试ORACLE RAC个节点分开调整服务器配置，敬请期待。</p>
+
       
     </div>
 
@@ -445,6 +543,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/oracle/" rel="tag"># oracle</a>
+          
+            <a href="/tags/rac/" rel="tag"># rac</a>
+          
+        </div>
       
 
       
