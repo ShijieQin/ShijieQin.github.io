@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shijieqin.github.io/2017/11/30/hwcloud%E4%B8%8A%E7%9A%84Oracle-RAC-12cR2%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C-4-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%88%9B%E5%BB%BA/</loc>
+    
+    <lastmod>2017-11-30T05:50:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shijieqin.github.io/2017/11/29/hwcloud%E4%B8%8A%E7%9A%84Oracle-RAC-12cR2%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C-3-oracle%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85/</loc>
     
     <lastmod>2017-11-29T12:38:13.000Z</lastmod>
@@ -58,6 +65,13 @@
   </url>
   
   <url>
+    <loc>https://shijieqin.github.io/tablet/index.html</loc>
+    
+    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shijieqin.github.io/categories/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
@@ -73,13 +87,6 @@
   
   <url>
     <loc>https://shijieqin.github.io/tags/index.html</loc>
-    
-    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://shijieqin.github.io/tablet/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     

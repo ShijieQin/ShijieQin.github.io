@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>https://shijieqin.github.io/2017/11/30/hwcloud%E4%B8%8A%E7%9A%84Oracle-RAC-12cR2%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C-4-%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%9E%E4%BE%8B%E7%9A%84%E5%88%9B%E5%BB%BA/</loc>
+    <lastmod>2017-11-30T05:50:02.000Z</lastmod>
+    <data>
+        <display>
+        <title>hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建</title>
+        <pubTime>2017-11-30T05:50:02.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://shijieqin.github.io/2017/11/29/hwcloud%E4%B8%8A%E7%9A%84Oracle-RAC-12cR2%E5%AE%89%E8%A3%85%E6%89%8B%E5%86%8C-3-oracle%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2017-11-29T12:38:13.000Z</lastmod>
     <data>
@@ -11,8 +26,18 @@
         <title>hwcloud上的Oracle-RAC-12cR2安装手册(3)--oracle软件的安装</title>
         <pubTime>2017-11-29T12:38:13.000Z</pubTime>
         
+        <tag>oracle</tag>
+         
+        <tag>rac</tag>
+         
          
            
+             
+              <breadCrumb title="oracle" url="https://shijieqin.github.io/categories/oracle/"/>
+          
+             
+              <breadCrumb title="rac" url="https://shijieqin.github.io/categories/oracle/rac/"/>
+          
         </display>
     </data>
     </url>
