@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="oracle,rac," />
 
 
 
@@ -97,16 +97,18 @@
 
 
 
-<meta name="description" content="If I can do, I do!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShijieQin">
-<meta property="og:url" content="https://shijieqin.github.io/categories/华为云/index.html">
+<meta name="description" content="网段声明在之前安装的rac基础上添加新节点，启动node01、node02为原rac，node03为新添加节点    Name node01 node02 node03     Public IP 192.168.1.14 192.168.1.15 192.168.1.16   Private IP 192.168.6.2 192.168.6.3 192.168.6.4   Virtual IP">
+<meta name="keywords" content="oracle,rac">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Oracle RAC 12CR2添加新节点">
+<meta property="og:url" content="https://shijieqin.github.io/2017/12/01/Oracle-RAC-12CR2添加新节点/index.html">
 <meta property="og:site_name" content="ShijieQin">
-<meta property="og:description" content="If I can do, I do!">
+<meta property="og:description" content="网段声明在之前安装的rac基础上添加新节点，启动node01、node02为原rac，node03为新添加节点    Name node01 node02 node03     Public IP 192.168.1.14 192.168.1.15 192.168.1.16   Private IP 192.168.6.2 192.168.6.3 192.168.6.4   Virtual IP">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-01T06:20:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ShijieQin">
-<meta name="twitter:description" content="If I can do, I do!">
+<meta name="twitter:title" content="Oracle RAC 12CR2添加新节点">
+<meta name="twitter:description" content="网段声明在之前安装的rac基础上添加新节点，启动node01、node02为原rac，node03为新添加节点    Name node01 node02 node03     Public IP 192.168.1.14 192.168.1.15 192.168.1.16   Private IP 192.168.6.2 192.168.6.3 192.168.6.4   Virtual IP">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://shijieqin.github.io/categories/华为云/"/>
+  <link rel="canonical" href="https://shijieqin.github.io/2017/12/01/Oracle-RAC-12CR2添加新节点/"/>
 
 
 
 
 
-  <title>分类: 华为云 | ShijieQin</title>
+  <title>Oracle RAC 12CR2添加新节点 | ShijieQin</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -176,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -324,73 +326,338 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>华为云<small>分类</small>
-      </h1>
-    </div>
-
+  <div id="posts" class="posts-expand">
     
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/21/s3fs-on-obs/" itemprop="url">
-              
-                <span itemprop="name">s3fs on obs</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-21T16:47:14+08:00"
-              content="2017-06-21" >
-          06-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2017/06/13/hwcloud-user-guid/" itemprop="url">
-              
-                <span itemprop="name">hwcloud user guid</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-13T09:56:03+08:00"
-              content="2017-06-13" >
-          06-13
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-    
-  </section>
 
   
 
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/12/01/Oracle-RAC-12CR2添加新节点/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shijie Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShijieQin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Oracle RAC 12CR2添加新节点</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-01T14:20:37+08:00">
+                2017-12-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/rac/" itemprop="url" rel="index">
+                    <span itemprop="name">rac</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/01/Oracle-RAC-12CR2添加新节点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/12/01/Oracle-RAC-12CR2添加新节点/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/12/01/Oracle-RAC-12CR2添加新节点/" class="leancloud_visitors" data-flag-title="Oracle RAC 12CR2添加新节点">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="网段声明"><a href="#网段声明" class="headerlink" title="网段声明"></a>网段声明</h3><p>在之前安装的rac基础上添加新节点，启动node01、node02为原rac，node03为新添加节点</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>node01</th>
+<th>node02</th>
+<th>node03</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Public IP</td>
+<td>192.168.1.14</td>
+<td>192.168.1.15</td>
+<td>192.168.1.16</td>
+</tr>
+<tr>
+<td>Private IP</td>
+<td>192.168.6.2</td>
+<td>192.168.6.3</td>
+<td>192.168.6.4</td>
+</tr>
+<tr>
+<td>Virtual IP</td>
+<td>192.168.1.17</td>
+<td>192.168.1.18</td>
+<td>192.168.1.22</td>
+</tr>
+<tr>
+<td>SCAN IP</td>
+<td>192.168.1.19</td>
+<td>192.168.1.120</td>
+<td>192.168.1.21</td>
+</tr>
+<tr>
+<td>NET IP</td>
+<td>192.168.2.95</td>
+<td>192.168.2.96</td>
+<td>192.168.2.55</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>参考<a href="/2017/11/23/hwcloud上的Oracle-RAC-12cR2安装手册-1-环境的准备/" title="hwcloud上的Oracle RAC 12cR2安装手册(1)—环境准备">hwcloud上的Oracle RAC 12cR2安装手册(1)—环境准备</a>做如下准备：</p>
+<ul>
+<li>IP分配</li>
+<li>安全组</li>
+<li>修改主机名</li>
+<li>配置host解析</li>
+<li>关闭libvirt</li>
+<li>禁用ZEROCONF</li>
+<li>安装依赖</li>
+<li>配置swap</li>
+<li>配置内核</li>
+<li>关闭NTP</li>
+<li>配置PAM</li>
+<li>修改limit文件</li>
+<li>关闭SELinux</li>
+<li>创建用户，用户组和文件夹</li>
+<li>配置grid和oracle用户的环境变量</li>
+<li>配置ssh互信</li>
+<li>挂载共享存储到node03上，安装asmlib，使用<code>oracleasm scandisks</code>扫描磁盘组</li>
+</ul>
+<h3 id="安装Grid"><a href="#安装Grid" class="headerlink" title="安装Grid"></a>安装Grid</h3><h4 id="环境检查"><a href="#环境检查" class="headerlink" title="环境检查"></a>环境检查</h4><p>node01上，grid用户，执行如下命令进行node03的环境检查</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cluvfy stage -pre nodeadd -n node03 -fixup -verbose</div></pre></td></tr></table></figure>
+<p>执行结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">CVU operation performed:      stage -pre nodeadd</div><div class="line">Date:                         Dec 1, 2017 3:40:21 PM</div><div class="line">CVU home:                     /u01/app/12.2.0/grid/</div><div class="line">User:                         grid</div><div class="line">******************************************************************************************</div><div class="line">Following is the list of fixable prerequisites selected to fix in this session</div><div class="line">******************************************************************************************</div><div class="line">--------------                ---------------     ----------------</div><div class="line">Check failed.                 Failed on nodes     Reboot required?</div><div class="line">--------------                ---------------     ----------------</div><div class="line">Package: cvuqdisk-1.0.10-1    node03              no</div><div class="line">Execute &quot;/tmp/CVU_12.2.0.1.0_grid/runfixup.sh&quot; as root user on nodes &quot;node03&quot; to perform the fix up operations manually</div><div class="line">Press ENTER key to continue after execution of &quot;/tmp/CVU_12.2.0.1.0_grid/runfixup.sh&quot; has completed on nodes &quot;node03&quot;</div></pre></td></tr></table></figure>
+<p>根据提示，在node03上用root用户执行修复脚本，结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">Press ENTER key to continue after execution of &quot;/tmp/CVU_12.2.0.1.0_grid/runfixup.sh&quot; has completed on nodes &quot;node03&quot;</div><div class="line">Fix: Package: cvuqdisk-1.0.10-1</div><div class="line">  Node Name                             Status</div><div class="line">  ------------------------------------  ------------------------</div><div class="line">  node03                                successful</div><div class="line">Result:</div><div class="line">&quot;Package: cvuqdisk-1.0.10-1&quot; was successfully fixed on all the applicable nodes</div><div class="line">[grid@node01 ~]$</div></pre></td></tr></table></figure>
+<h4 id="临时禁用dns解析"><a href="#临时禁用dns解析" class="headerlink" title="临时禁用dns解析"></a>临时禁用dns解析</h4><p>由于grid安装时会校验dns中是否能检查到节点信息，图形化安装时可以手动忽略，这里静默添加，不能忽略，会报错退出，如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">INFO:  [Dec 1, 2017 4:46:51 PM] resolv.conf Integrity: resolv.conf Integrity</div><div class="line">INFO:  [Dec 1, 2017 4:46:51 PM] Severity:CRITICAL</div><div class="line">INFO:  [Dec 1, 2017 4:46:51 PM] OverallStatus:VERIFICATION_FAILED</div><div class="line">INFO:  [Dec 1, 2017 4:46:51 PM] *********************************************</div><div class="line">INFO:  [Dec 1, 2017 4:46:51 PM] (Linux) resolv.conf Integrity: This task checks consistency of file /etc/resolv.conf file across nodes</div><div class="line">INFO:  [Dec 1, 2017 4:46:51 PM] Severity:CRITICAL</div><div class="line">INFO:  [Dec 1, 2017 4:46:51 PM] OverallStatus:VERIFICATION_FAILED</div></pre></td></tr></table></figure>
+<p>所以临时禁用，如下：</p>
+<p>node01, node02, node03节点，root用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mv /etc/resolv.conf /etc/resolv.conf.bak</div></pre></td></tr></table></figure>
+<h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>node01上，grid用户，执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd $ORACLE_HOME/addnode</div><div class="line">./addnode.sh -silent &quot;CLUSTER_NEW_NODES=&#123;node03&#125;&quot; &quot;CLUSTER_NEW_VIRTUAL_HOSTNAMES=&#123;node03-vip.myCluster.com&#125;&quot; &quot;CLUSTER_NEW_PUBLIC_HOSTNAMES=&#123;node03.myCluster.com&#125;&quot; &quot;CLUSTER_NEW_NODE_ROLES=&#123;HUB&#125;&quot;</div></pre></td></tr></table></figure>
+<p><strong><em>注：</em></strong></p>
+<p><strong><em>以上参数都参考图形化安装时的配置</em></strong></p>
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">As a root user, execute the following script(s):</div><div class="line">	1. /u01/app/oraInventory/orainstRoot.sh</div><div class="line">	2. /u01/app/12.2.0/grid/root.sh</div><div class="line"></div><div class="line">Execute /u01/app/oraInventory/orainstRoot.sh on the following nodes: </div><div class="line">[node03]</div><div class="line">Execute /u01/app/12.2.0/grid/root.sh on the following nodes: </div><div class="line">[node03]</div><div class="line"></div><div class="line">The scripts can be executed in parallel on all the nodes.</div><div class="line"></div><div class="line">..................................................   100% Done.</div><div class="line">Successfully Setup Software.</div></pre></td></tr></table></figure>
+<p>根据提示，用root用户在node03执行<code>/u01/app/oraInventory/orainstRoot.sh</code>，<code>/u01/app/12.2.0/grid/root.sh</code>即可</p>
+<h3 id="安装oracle软件"><a href="#安装oracle软件" class="headerlink" title="安装oracle软件"></a>安装oracle软件</h3><p>node01上，oracle用户，执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd $ORACLE_HOME/addnode</div><div class="line">./addnode.sh -silent &quot;CLUSTER_NEW_NODES=&#123;node03&#125;&quot;</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">As a root user, execute the following script(s):</div><div class="line">	1. /u01/app/oracle/product/12.2.0/dbhome_1/root.sh</div><div class="line"></div><div class="line">Execute /u01/app/oracle/product/12.2.0/dbhome_1/root.sh on the following nodes: </div><div class="line">[node03]</div><div class="line"></div><div class="line"></div><div class="line">..................................................   100% Done.</div><div class="line">Successfully Setup Software.</div></pre></td></tr></table></figure>
+<p>根据提示，使用root用户，在node03上执行<code>/u01/app/oracle/product/12.2.0/dbhome_1/root.sh</code>即可</p>
+<h3 id="安装instance"><a href="#安装instance" class="headerlink" title="安装instance"></a>安装instance</h3><p>node01上，oracle用户，执行如下命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dbca -silent -addInstance -nodeName node03 -gdbName orcl.myCluster.com -instanceName orcl3 -sysDBAUserName sys -sysDBAPassword Hand1234</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ dbca -silent -addInstance -nodeName node03 -gdbName orcl.myCluster.com -instanceName orcl3 -sysDBAUserName sys -sysDBAPassword Hand1234</div><div class="line">Adding instance</div><div class="line">1% complete</div><div class="line">2% complete</div><div class="line">6% complete</div><div class="line">13% complete</div><div class="line">20% complete</div><div class="line">26% complete</div><div class="line">33% complete</div><div class="line">40% complete</div><div class="line">46% complete</div><div class="line">53% complete</div><div class="line">66% complete</div><div class="line">Completing instance management.</div><div class="line">76% complete</div><div class="line">100% complete</div><div class="line">Look at the log file &quot;/u01/app/oracle/cfgtoollogs/dbca/orcl/orcl.log&quot; for further details.</div></pre></td></tr></table></figure>
+<p><strong><em>注：</em></strong></p>
+<ul>
+<li><strong><em>安装过程中，出现找不到磁盘组的情况</em></strong></li>
+<li><strong><em>后把u01文件夹按之前的授权重新授权，重启服务器出现原来的RAC无法启动的问题，报错为CRS-0184 Cannot Communicate With The Crs Daemon in Oracle</em></strong></li>
+<li><strong><em>通过在三个节点(其实只需在无法启动的节点)执行安装grid时和oracle生成的root.sh文件之后，能够正常启动数据库</em></strong></li>
+<li><strong><em>安装第三个节点的实例能找到ASM磁盘</em></strong></li>
+</ul>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><h4 id="集群层"><a href="#集群层" class="headerlink" title="集群层"></a>集群层</h4><ul>
+<li>crsctl check crs</li>
+<li>crsctl check cluster -all</li>
+<li>crsctl status res -t</li>
+</ul>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><ul>
+<li>srvctl status nodeapps</li>
+<li>srvctl status asm</li>
+<li>srvctl status listener</li>
+<li>srvctl status instance -d orcl -i orcl1,orcl2,orcl3</li>
+</ul>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>记得恢复/etc/resolv.conf ！！！</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/oracle/" rel="tag"># oracle</a>
+          
+            <a href="/tags/rac/" rel="tag"># rac</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/" rel="next" title="hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建">
+                <i class="fa fa-chevron-left"></i> hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -398,6 +665,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -417,8 +690,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat.jpg"
@@ -529,6 +811,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网段声明"><span class="nav-number">1.</span> <span class="nav-text">网段声明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Grid"><span class="nav-number">3.</span> <span class="nav-text">安装Grid</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#环境检查"><span class="nav-number">3.1.</span> <span class="nav-text">环境检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#临时禁用dns解析"><span class="nav-number">3.2.</span> <span class="nav-text">临时禁用dns解析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装"><span class="nav-number">3.3.</span> <span class="nav-text">安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装oracle软件"><span class="nav-number">4.</span> <span class="nav-text">安装oracle软件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装instance"><span class="nav-number">5.</span> <span class="nav-text">安装instance</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-number">6.</span> <span class="nav-text">验证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#集群层"><span class="nav-number">6.1.</span> <span class="nav-text">集群层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#应用层"><span class="nav-number">6.2.</span> <span class="nav-text">应用层</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">7.</span> <span class="nav-text">最后</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -662,10 +960,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -689,6 +987,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 91758, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 91758, xid: "2017/12/01/Oracle-RAC-12CR2添加新节点/"});
 		
 
 		(function() {
