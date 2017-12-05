@@ -97,41 +97,18 @@
 
 
 
-<meta name="description" content="node01上，oracle用户，执行dbca，如下： 1[oracle@node01 ~]$ dbca 安装过程如下：">
+<meta name="description" content="目的删除节点node03 其中：  数据库名为orcl node03的实例名为orcl3">
 <meta name="keywords" content="oracle,rac">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建">
-<meta property="og:url" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/index.html">
+<meta property="og:title" content="RAC删除节点">
+<meta property="og:url" content="https://shijieqin.github.io/2017/12/05/RAC删除节点/index.html">
 <meta property="og:site_name" content="ShijieQin">
-<meta property="og:description" content="node01上，oracle用户，执行dbca，如下： 1[oracle@node01 ~]$ dbca 安装过程如下：">
+<meta property="og:description" content="目的删除节点node03 其中：  数据库名为orcl node03的实例名为orcl3">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step1.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step2.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step3.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step4.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step5.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step6.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step7-2.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step8.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-2.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-3.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-4.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step10.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step11.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step12.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step12-2.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13-2.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13-3.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step14.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step15.png">
-<meta property="og:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step16.png">
-<meta property="og:updated_time" content="2017-11-30T05:50:02.000Z">
+<meta property="og:updated_time" content="2017-12-05T05:59:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建">
-<meta name="twitter:description" content="node01上，oracle用户，执行dbca，如下： 1[oracle@node01 ~]$ dbca 安装过程如下：">
-<meta name="twitter:image" content="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step1.png">
+<meta name="twitter:title" content="RAC删除节点">
+<meta name="twitter:description" content="目的删除节点node03 其中：  数据库名为orcl node03的实例名为orcl3">
 
 
 
@@ -159,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/"/>
+  <link rel="canonical" href="https://shijieqin.github.io/2017/12/05/RAC删除节点/"/>
 
 
 
 
 
-  <title>hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建 | ShijieQin</title>
+  <title>RAC删除节点 | ShijieQin</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -359,7 +336,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/">
+    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/12/05/RAC删除节点/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shijie Qin">
@@ -376,7 +353,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建</h1>
+          <h1 class="post-title" itemprop="name headline">RAC删除节点</h1>
         
 
         <div class="post-meta">
@@ -388,8 +365,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-30T13:50:02+08:00">
-                2017-11-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-05T13:59:58+08:00">
+                2017-12-05
               </time>
             
 
@@ -441,8 +418,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count hc-comment-count" data-xid="2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/" itemprop="commentsCount"></span>
+                <a href="/2017/12/05/RAC删除节点/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/12/05/RAC删除节点/" itemprop="commentsCount"></span>
                 </a>
               </span>
               <!--/noindex-->
@@ -451,7 +428,7 @@
 
           
           
-             <span id="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/" class="leancloud_visitors" data-flag-title="hwcloud上的Oracle-RAC-12cR2安装手册(4)--数据库实例的创建">
+             <span id="/2017/12/05/RAC删除节点/" class="leancloud_visitors" data-flag-title="RAC删除节点">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -479,44 +456,53 @@
       
 
       
-        <p>node01上，oracle用户，执行<code>dbca</code>，如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ dbca</div></pre></td></tr></table></figure>
-<p>安装过程如下：</p>
+        <h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>删除节点node03</p>
+<p>其中：</p>
+<ul>
+<li>数据库名为orcl</li>
+<li>node03的实例名为orcl3</li>
+</ul>
 <a id="more"></a>
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step1.png" alt="创建一个数据库" title="创建一个数据库">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step2.png" alt="高级配置" title="高级配置">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step3.png" alt="安装RAC，选择自定义数据库" title="安装RAC，选择自定义数据库">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step4.png" alt="选择所有节点" title="选择所有节点">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step5.png" alt="设置全局数据库名和SID前缀，选择创建空白容器数据库" title="设置全局数据库名和SID前缀，选择创建空白容器数据库">
-<p><strong><em>注：</em></strong><br><strong><em>此处的SID前缀需要与环境变量里的ORACLE_SID对应：</em></strong><br><strong><em>例如，SID前缀设置orcl，ORACLE_SID需要设置为orcl1和orcl2。</em></strong></p>
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step6.png" alt="选择ASM存储类型并选择DATA磁盘组" title="选择ASM存储类型并选择DATA磁盘组">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step7-2.png" alt="启用快速闪回去，并选择DATA磁盘组，大小根据实际需求设置，忽略提示，直接确定" title="启用快速闪回去，并选择DATA磁盘组，大小根据实际需求设置，忽略提示，直接确定">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step8.png" alt="默认" title="默认">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9.png" alt="选择自动共享内存管理，并设置MEMORY_TARGET，建议物理内存的80%" title="选择自动共享内存管理，并设置MEMORY_TARGET，建议物理内存的80%">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-2.png" alt="块大小设置为32768B，进程数设置为1500" title="块大小设置为32768B，进程数设置为1500">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-3.png" alt="字符集选择AL32UTF8" title="字符集选择AL32UTF8">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step9-4.png" alt="选择专用服务器模式" title="选择专用服务器模式">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step10.png" alt="不启用EM" title="不启用EM">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step11.png" alt="使用统一密码" title="使用统一密码">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step12.png" alt="创建数据库" title="创建数据库">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step12-2.png" alt="忽略警告，确认" title="忽略警告，确认">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13.png" alt="检查" title="检查">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13-2.png" alt="忽略" title="忽略">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step13-3.png" alt="确认" title="确认">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step14.png" alt="配置完成" title="配置完成">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step15.png" alt="安装进行中" title="安装进行中">
-<img src="/2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/Step16.png" alt="安装完成，关闭" title="安装完成，关闭">
-<p>node01、node02上，oracle用户，执行<code>lsnrctl status</code>查看实例运行状态</p>
-<p>node01：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ lsnrctl status</div><div class="line">LSNRCTL for Linux: Version 12.2.0.1.0 - Production on 30-NOV-2017 17:27:08</div><div class="line">Copyright (c) 1991, 2016, Oracle.  All rights reserved.</div><div class="line">Connecting to (ADDRESS=(PROTOCOL=tcp)(HOST=)(PORT=1521))</div><div class="line">STATUS of the LISTENER</div><div class="line">------------------------</div><div class="line">Alias                     LISTENER</div><div class="line">Version                   TNSLSNR for Linux: Version 12.2.0.1.0 - Production</div><div class="line">Start Date                29-NOV-2017 18:45:30</div><div class="line">Uptime                    0 days 22 hr. 41 min. 37 sec</div><div class="line">Trace Level               off</div><div class="line">Security                  ON: Local OS Authentication</div><div class="line">SNMP                      OFF</div><div class="line">Listener Parameter File   /u01/app/12.2.0/grid/network/admin/listener.ora</div><div class="line">Listener Log File         /u01/app/grid/diag/tnslsnr/node01/listener/alert/log.xml</div><div class="line">Listening Endpoints Summary...</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=LISTENER)))</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.1.14)(PORT=1521)))</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.1.17)(PORT=1521)))</div><div class="line">Services Summary...</div><div class="line">Service &quot;+ASM&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;+ASM_DATA&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;+ASM_OCR_VOT_GIMR&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;orcl.myCluster.com&quot; has 1 instance(s).</div><div class="line">  Instance &quot;orcl1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;orclXDB.myCluster.com&quot; has 1 instance(s).</div><div class="line">  Instance &quot;orcl1&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">The command completed successfully</div></pre></td></tr></table></figure>
-<p>node02：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">[oracle@node02 ~]$ lsnrctl status</div><div class="line">LSNRCTL for Linux: Version 12.2.0.1.0 - Production on 30-NOV-2017 17:29:46</div><div class="line">Copyright (c) 1991, 2016, Oracle.  All rights reserved.</div><div class="line">Connecting to (ADDRESS=(PROTOCOL=tcp)(HOST=)(PORT=1521))</div><div class="line">STATUS of the LISTENER</div><div class="line">------------------------</div><div class="line">Alias                     LISTENER</div><div class="line">Version                   TNSLSNR for Linux: Version 12.2.0.1.0 - Production</div><div class="line">Start Date                29-NOV-2017 18:57:02</div><div class="line">Uptime                    0 days 22 hr. 32 min. 43 sec</div><div class="line">Trace Level               off</div><div class="line">Security                  ON: Local OS Authentication</div><div class="line">SNMP                      OFF</div><div class="line">Listener Parameter File   /u01/app/12.2.0/grid/network/admin/listener.ora</div><div class="line">Listener Log File         /u01/app/grid/diag/tnslsnr/node02/listener/alert/log.xml</div><div class="line">Listening Endpoints Summary...</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=ipc)(KEY=LISTENER)))</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.1.15)(PORT=1521)))</div><div class="line">  (DESCRIPTION=(ADDRESS=(PROTOCOL=tcp)(HOST=192.168.1.18)(PORT=1521)))</div><div class="line">Services Summary...</div><div class="line">Service &quot;+ASM&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;+ASM_DATA&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;+ASM_OCR_VOT_GIMR&quot; has 1 instance(s).</div><div class="line">  Instance &quot;+ASM2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;orcl.myCluster.com&quot; has 1 instance(s).</div><div class="line">  Instance &quot;orcl2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">Service &quot;orclXDB.myCluster.com&quot; has 1 instance(s).</div><div class="line">  Instance &quot;orcl2&quot;, status READY, has 1 handler(s) for this service...</div><div class="line">The command completed successfully</div></pre></td></tr></table></figure>
-<p>node01、node02上，oracle用户，执行<code>sqlplus / as sysdba</code>尝试登录数据库，并执行<code>show pdbs;</code>查看pdb状态</p>
-<p>node01：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ sqlplus / as sysdba</div><div class="line">SQL*Plus: Release 12.2.0.1.0 Production on Thu Nov 30 17:37:41 2017</div><div class="line">Copyright (c) 1982, 2016, Oracle.  All rights reserved.</div><div class="line">Connected to:</div><div class="line">Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production</div><div class="line">SQL&gt; show pdbs;</div><div class="line">    CON_ID CON_NAME                       OPEN MODE  RESTRICTED</div><div class="line">---------- ------------------------------ ---------- ----------</div><div class="line">         2 PDB$SEED                       READ ONLY  NO</div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
-<p>node02:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[oracle@node02 ~]$ sqlplus / as sysdba</div><div class="line">SQL*Plus: Release 12.2.0.1.0 Production on Thu Nov 30 17:39:15 2017</div><div class="line">Copyright (c) 1982, 2016, Oracle.  All rights reserved.</div><div class="line">Connected to:</div><div class="line">Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production</div><div class="line">SQL&gt; show pdbs;</div><div class="line">    CON_ID CON_NAME                       OPEN MODE  RESTRICTED</div><div class="line">---------- ------------------------------ ---------- ----------</div><div class="line">         2 PDB$SEED                       READ ONLY  NO</div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
-<p>至此，完成了数据库实例的创建，ORACLE RAC安装完成，后面测试ORACLE RAC个节点分开调整服务器配置，敬请期待。</p>
+<h3 id="停止node03的数据库实例"><a href="#停止node03的数据库实例" class="headerlink" title="停止node03的数据库实例"></a>停止node03的数据库实例</h3><p>在任意一个可用节点上，这里用node01，grid用户执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">srvctl stop instance -d orcl -i orcl3</div></pre></td></tr></table></figure>
+<h3 id="卸载node03上的数据库实例"><a href="#卸载node03上的数据库实例" class="headerlink" title="卸载node03上的数据库实例"></a>卸载node03上的数据库实例</h3><p>在任意一个可用节点上，这里用node01，oracle用户执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">dbca -silent -deleteInstance -nodeList node03 -gdbName orcl -instanceName orcl3 -sysDBAUserName sys -sysDBAPassword Hand1234</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ dbca -silent -deleteInstance -nodeList node03 -gdbName orcl -instanceName orcl3 -sysDBAUserName sys -sysDBAPassword Hand1234</div><div class="line">Deleting instance</div><div class="line">1% complete</div><div class="line">2% complete</div><div class="line">6% complete</div><div class="line">13% complete</div><div class="line">20% complete</div><div class="line">26% complete</div><div class="line">33% complete</div><div class="line">40% complete</div><div class="line">46% complete</div><div class="line">53% complete</div><div class="line">60% complete</div><div class="line">66% complete</div><div class="line">Completing instance management.</div><div class="line">100% complete</div><div class="line">Look at the log file &quot;/u01/app/oracle/cfgtoollogs/dbca/orcl0.log&quot; for further details.</div></pre></td></tr></table></figure>
+<p>node01上，grid用户，执行如下命令验证是否删除</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">srvctl config database -d orcl</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">[grid@node01 ~]$ srvctl config database -d orcl</div><div class="line">Database unique name: orcl</div><div class="line">Database name: orcl</div><div class="line">Oracle home: /u01/app/oracle/product/12.2.0/dbhome_1</div><div class="line">Oracle user: oracle</div><div class="line">Spfile: +DATA/ORCL/PARAMETERFILE/spfile.277.961430953</div><div class="line">Password file: +DATA/ORCL/PASSWORD/pwdorcl.256.961427153</div><div class="line">Domain: myCluster.com</div><div class="line">Start options: open</div><div class="line">Stop options: immediate</div><div class="line">Database role: PRIMARY</div><div class="line">Management policy: AUTOMATIC</div><div class="line">Server pools:</div><div class="line">Disk Groups: DATA</div><div class="line">Mount point paths:</div><div class="line">Services:</div><div class="line">Type: RAC</div><div class="line">Start concurrency:</div><div class="line">Stop concurrency:</div><div class="line">OSDBA group: dba</div><div class="line">OSOPER group: oper</div><div class="line">Database instances: orcl1,orcl2</div><div class="line">Configured nodes: node01,node02</div><div class="line">CSS critical: no</div><div class="line">CPU count: 0</div><div class="line">Memory target: 0</div><div class="line">Maximum memory: 0</div><div class="line">Default network number for database services:</div><div class="line">Database is administrator managed</div></pre></td></tr></table></figure>
+<p>重点关注 Database instance，发现没有orcl3</p>
+<h3 id="停止node03的lisenter"><a href="#停止node03的lisenter" class="headerlink" title="停止node03的lisenter"></a>停止node03的lisenter</h3><p>在任意一个可用节点上，这里用node01，grid用户执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">srvctl disable listener -l LISTENER -n node03</div><div class="line">srvctl stop listener -l LISTENER -n node03</div></pre></td></tr></table></figure>
+<h3 id="在node1上更新inventory"><a href="#在node1上更新inventory" class="headerlink" title="在node1上更新inventory"></a>在node1上更新inventory</h3><p>node01，oracle用户，执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">[oracle@node01 ~]$ echo $ORACLE_HOME</div><div class="line">/u01/app/oracle/product/12.2.0/dbhome_1</div><div class="line">[oracle@node01 bin]$ cd $ORACLE_HOME/oui/bin</div><div class="line">[oracle@node01 bin]$ ./runInstaller -updatenodelist ORACLE_HOME=/u01/app/oracle/product/12.2.0/dbhome_1 &quot;CLUSTER_NODES=&#123;node01,node02&#125;&quot;</div><div class="line"></div><div class="line">Starting Oracle Universal Installer...</div><div class="line">Checking swap space: must be greater than 500 MB.   Actual 8191 MB    Passed</div><div class="line">The inventory pointer is located at /etc/oraInst.loc</div><div class="line">&apos;UpdateNodeList&apos; was successful.</div></pre></td></tr></table></figure>
+<h3 id="在node03运行deinstall"><a href="#在node03运行deinstall" class="headerlink" title="在node03运行deinstall"></a>在node03运行deinstall</h3><p>node03，oracle用户，执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[oracle@node03 ~]$ cd $ORACLE_HOME/deinstall </div><div class="line">[oracle@node03 deinstall]$ ./deinstall -local</div></pre></td></tr></table></figure>
+<h3 id="GRID层面删除node03"><a href="#GRID层面删除node03" class="headerlink" title="GRID层面删除node03"></a>GRID层面删除node03</h3><h4 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h4><p>node01上，grid用户，执行如下面命令检查</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[grid@node01 ~]$ olsnodes -s -t</div><div class="line">node01  Active  Unpinned</div><div class="line">node02  Active  Unpinned</div><div class="line">node03  Active  Unpinned</div></pre></td></tr></table></figure>
+<p>如果为node03pinned,使用如下命令设为Unpinned</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">crsctl unpin css-n node03</div></pre></td></tr></table></figure>
+<h4 id="在node03节点执行以root用户执行deconfig"><a href="#在node03节点执行以root用户执行deconfig" class="headerlink" title="在node03节点执行以root用户执行deconfig"></a>在node03节点执行以root用户执行deconfig</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@node03 ~]# cd /u01/app/12.2.0/grid/crs/install/</div><div class="line">[root@node03 install]# ./rootcrs.sh -deconfig -deinstall -force</div></pre></td></tr></table></figure>
+<p>结果如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">[root@node03 install]# ./rootcrs.sh -deconfig -deinstall -force</div><div class="line">Using configuration parameter file: /u01/app/12.2.0/grid/crs/install/crsconfig_params</div><div class="line">The log of current session can be found at:</div><div class="line">  /u01/app/grid/crsdata/node03/crsconfig/crsdeconfig_node03_2017-12-05_05-23-51PM.log</div><div class="line">CRS-2791: Starting shutdown of Oracle High Availability Services-managed resources on &apos;node03&apos;</div><div class="line">CRS-2673: Attempting to stop &apos;ora.crsd&apos; on &apos;node03&apos;</div><div class="line">CRS-2790: Starting shutdown of Cluster Ready Services-managed resources on server &apos;node03&apos;</div><div class="line">CRS-2673: Attempting to stop &apos;ora.DATA.dg&apos; on &apos;node03&apos;</div><div class="line">CRS-2673: Attempting to stop &apos;ora.OCR_VOT_GIMR.dg&apos; on &apos;node03&apos;</div><div class="line">CRS-2673: Attempting to stop &apos;ora.chad&apos; on &apos;node03&apos;</div><div class="line">CRS-2677: Stop of &apos;ora.OCR_VOT_GIMR.dg&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2677: Stop of &apos;ora.DATA.dg&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2673: Attempting to stop &apos;ora.asm&apos; on &apos;node03&apos;</div><div class="line">CRS-2677: Stop of &apos;ora.asm&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2673: Attempting to stop &apos;ora.ASMNET1LSNR_ASM.lsnr&apos; on &apos;node03&apos;</div><div class="line">CRS-2677: Stop of &apos;ora.chad&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2677: Stop of &apos;ora.ASMNET1LSNR_ASM.lsnr&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2792: Shutdown of Cluster Ready Services-managed resources on &apos;node03&apos; has completed</div><div class="line">CRS-2677: Stop of &apos;ora.crsd&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2673: Attempting to stop &apos;ora.asm&apos; on &apos;node03&apos;</div><div class="line">CRS-2673: Attempting to stop &apos;ora.crf&apos; on &apos;node03&apos;</div><div class="line">CRS-2673: Attempting to stop &apos;ora.gpnpd&apos; on &apos;node03&apos;</div><div class="line">CRS-2673: Attempting to stop &apos;ora.mdnsd&apos; on &apos;node03&apos;</div><div class="line">CRS-2677: Stop of &apos;ora.crf&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2677: Stop of &apos;ora.gpnpd&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2677: Stop of &apos;ora.mdnsd&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2677: Stop of &apos;ora.asm&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2673: Attempting to stop &apos;ora.cluster_interconnect.haip&apos; on &apos;node03&apos;</div><div class="line">CRS-2677: Stop of &apos;ora.cluster_interconnect.haip&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2673: Attempting to stop &apos;ora.ctssd&apos; on &apos;node03&apos;</div><div class="line">CRS-2673: Attempting to stop &apos;ora.evmd&apos; on &apos;node03&apos;</div><div class="line">CRS-2677: Stop of &apos;ora.ctssd&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2677: Stop of &apos;ora.evmd&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2673: Attempting to stop &apos;ora.cssd&apos; on &apos;node03&apos;</div><div class="line">CRS-2677: Stop of &apos;ora.cssd&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2673: Attempting to stop &apos;ora.gipcd&apos; on &apos;node03&apos;</div><div class="line">CRS-2677: Stop of &apos;ora.gipcd&apos; on &apos;node03&apos; succeeded</div><div class="line">CRS-2793: Shutdown of Oracle High Availability Services-managed resources on &apos;node03&apos; has completed</div><div class="line">CRS-4133: Oracle High Availability Services has been stopped.</div><div class="line">2017/12/05 17:24:42 CLSRSC-4006: Removing Oracle Trace File Analyzer (TFA) Collector.</div><div class="line">2017/12/05 17:24:55 CLSRSC-4007: Successfully removed Oracle Trace File Analyzer (TFA) Collector.</div><div class="line">2017/12/05 17:24:57 CLSRSC-336: Successfully deconfigured Oracle Clusterware stack on this node</div></pre></td></tr></table></figure>
+<h4 id="验证结果"><a href="#验证结果" class="headerlink" title="验证结果"></a>验证结果</h4><p>node01上，grid用户，执行如下面命令检查</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[grid@node01 ~]$ olsnodes -s -t</div><div class="line">node01  Active  Unpinned</div><div class="line">node02  Active  Unpinned</div><div class="line">node03  Inactive        Unpinned</div></pre></td></tr></table></figure>
+<p>node03为Inactive</p>
+<h4 id="在node01上删除节点node03的节点信息"><a href="#在node01上删除节点node03的节点信息" class="headerlink" title="在node01上删除节点node03的节点信息"></a>在node01上删除节点node03的节点信息</h4><p>node01上，root用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@node01 ~]# cd /u01/app/12.2.0/grid/bin/</div><div class="line">[root@node01 bin]# ./crsctl delete node -n node03</div><div class="line">CRS-4661: Node node03 successfully deleted.</div></pre></td></tr></table></figure>
+<p>node01上，grid用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[grid@node01 ~]$ olsnodes -s -t</div><div class="line">node01  Active  Unpinned</div><div class="line">node02  Active  Unpinned</div></pre></td></tr></table></figure>
+<h4 id="更新node03节点列表"><a href="#更新node03节点列表" class="headerlink" title="更新node03节点列表"></a>更新node03节点列表</h4><p>node03上，grid用户，执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[grid@node03 ~]$ cd /u01/app/12.2.0/grid/oui/bin/</div><div class="line">[grid@node03 bin]$ ./runInstaller -updateNodeList ORACLE_HOME=/u01/app/12.2.0/grid/ &quot;CLUSTER_NODES=&#123;node03&#125;&quot; CRS=TRUE  -local</div><div class="line">Starting Oracle Universal Installer...</div><div class="line">Checking swap space: must be greater than 500 MB.   Actual 8191 MB    Passed</div><div class="line">The inventory pointer is located at /etc/oraInst.loc</div><div class="line">&apos;UpdateNodeList&apos; was successful.</div></pre></td></tr></table></figure>
+<h4 id="在node03上删除grid"><a href="#在node03上删除grid" class="headerlink" title="在node03上删除grid"></a>在node03上删除grid</h4><p>node03上，grid用户，执行如下命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[grid@node03 bin]$ cd /u01/app/12.2.0/grid/deinstall/</div><div class="line">[grid@node03 deinstall]$ ./deinstall -local</div></pre></td></tr></table></figure>
+<h4 id="node01节点上更新节点列表"><a href="#node01节点上更新节点列表" class="headerlink" title="node01节点上更新节点列表"></a>node01节点上更新节点列表</h4><p>node01上，grid用户</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">[grid@node01 ~]$ cd /u01/app/12.2.0/grid/oui/bin/</div><div class="line">[grid@node01 bin]$ ./runInstaller -updateNodeList ORACLE_HOME=/u01/app/12.2.0/grid &quot;CLUSTER_NODES=&#123;node01,node02&#125;&quot; CRS=TRUE -silent</div><div class="line">Starting Oracle Universal Installer...</div><div class="line">Checking swap space: must be greater than 500 MB.   Actual 8191 MB    Passed</div><div class="line">The inventory pointer is located at /etc/oraInst.loc</div><div class="line">&apos;UpdateNodeList&apos; was successful.</div></pre></td></tr></table></figure>
+<h4 id="验证是否删除成功"><a href="#验证是否删除成功" class="headerlink" title="验证是否删除成功"></a>验证是否删除成功</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[grid@node01 bin]$ cluvfy stage -post nodedel -n node03</div><div class="line">Verifying Node Removal ...</div><div class="line">  Verifying CRS Integrity ...PASSED</div><div class="line">  Verifying Clusterware Version Consistency ...PASSED</div><div class="line">Verifying Node Removal ...PASSED</div><div class="line">Post-check for node removal was successful.</div><div class="line">CVU operation performed:      stage -post nodedel</div><div class="line">Date:                         Dec 5, 2017 6:23:06 PM</div><div class="line">CVU home:                     /u01/app/12.2.0/grid/</div><div class="line">User:                         grid</div></pre></td></tr></table></figure>
+<h3 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h3><p>如果出现vip没有删除的情况，可使用如下命令删除vip</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">cd /u01/app/12.2.0/grid/bin</div><div class="line">[root@bin]# srvctl stop vip ora.node03.vip</div><div class="line">[root@bin]# srvctl remove vip ora.node03.vip</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -561,8 +547,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/29/hwcloud上的Oracle-RAC-12cR2安装手册-3-oracle软件的安装/" rel="next" title="hwcloud上的Oracle-RAC-12cR2安装手册(3)--oracle软件的安装">
-                <i class="fa fa-chevron-left"></i> hwcloud上的Oracle-RAC-12cR2安装手册(3)--oracle软件的安装
+              <a href="/2017/12/01/Oracle-RAC-12CR2添加新节点/" rel="next" title="Oracle RAC 12CR2添加新节点">
+                <i class="fa fa-chevron-left"></i> Oracle RAC 12CR2添加新节点
               </a>
             
           </div>
@@ -570,10 +556,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/01/Oracle-RAC-12CR2添加新节点/" rel="prev" title="Oracle RAC 12CR2添加新节点">
-                Oracle RAC 12CR2添加新节点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -645,8 +627,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat.jpg"
@@ -757,6 +748,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#目的"><span class="nav-number">1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止node03的数据库实例"><span class="nav-number">2.</span> <span class="nav-text">停止node03的数据库实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#卸载node03上的数据库实例"><span class="nav-number">3.</span> <span class="nav-text">卸载node03上的数据库实例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#停止node03的lisenter"><span class="nav-number">4.</span> <span class="nav-text">停止node03的lisenter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在node1上更新inventory"><span class="nav-number">5.</span> <span class="nav-text">在node1上更新inventory</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在node03运行deinstall"><span class="nav-number">6.</span> <span class="nav-text">在node03运行deinstall</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GRID层面删除node03"><span class="nav-number">7.</span> <span class="nav-text">GRID层面删除node03</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#检查"><span class="nav-number">7.1.</span> <span class="nav-text">检查</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在node03节点执行以root用户执行deconfig"><span class="nav-number">7.2.</span> <span class="nav-text">在node03节点执行以root用户执行deconfig</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证结果"><span class="nav-number">7.3.</span> <span class="nav-text">验证结果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在node01上删除节点node03的节点信息"><span class="nav-number">7.4.</span> <span class="nav-text">在node01上删除节点node03的节点信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#更新node03节点列表"><span class="nav-number">7.5.</span> <span class="nav-text">更新node03节点列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在node03上删除grid"><span class="nav-number">7.6.</span> <span class="nav-text">在node03上删除grid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#node01节点上更新节点列表"><span class="nav-number">7.7.</span> <span class="nav-text">node01节点上更新节点列表</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证是否删除成功"><span class="nav-number">7.8.</span> <span class="nav-text">验证是否删除成功</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#附录"><span class="nav-number">8.</span> <span class="nav-text">附录</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -918,7 +925,7 @@
 		_hcwp.push({widget:"Bloggerstream", widget_id: 91758, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
 		
-		_hcwp.push({widget:"Stream", widget_id: 91758, xid: "2017/11/30/hwcloud上的Oracle-RAC-12cR2安装手册-4-数据库实例的创建/"});
+		_hcwp.push({widget:"Stream", widget_id: 91758, xid: "2017/12/05/RAC删除节点/"});
 		
 
 		(function() {
