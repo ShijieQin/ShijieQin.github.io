@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="oracle 12C,RAC,PDB," />
 
 
 
@@ -97,16 +97,18 @@
 
 
 
-<meta name="description" content="If I can do, I do!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShijieQin">
-<meta property="og:url" content="https://shijieqin.github.io/tags/obs/index.html">
+<meta name="description" content="前言本文记录在oracle 12C，通过pdb插拔的方式将单实例转换为rac环境出现的问题。">
+<meta name="keywords" content="oracle 12C,RAC,PDB">
+<meta property="og:type" content="article">
+<meta property="og:title" content="oracle 12C 单实例PDB插入到RAC环境下出现的问题">
+<meta property="og:url" content="https://shijieqin.github.io/2017/12/24/oracle-12C-单实例PDB插入到RAC环境下出现的问题/index.html">
 <meta property="og:site_name" content="ShijieQin">
-<meta property="og:description" content="If I can do, I do!">
+<meta property="og:description" content="前言本文记录在oracle 12C，通过pdb插拔的方式将单实例转换为rac环境出现的问题。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-24T03:49:33.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ShijieQin">
-<meta name="twitter:description" content="If I can do, I do!">
+<meta name="twitter:title" content="oracle 12C 单实例PDB插入到RAC环境下出现的问题">
+<meta name="twitter:description" content="前言本文记录在oracle 12C，通过pdb插拔的方式将单实例转换为rac环境出现的问题。">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://shijieqin.github.io/tags/obs/"/>
+  <link rel="canonical" href="https://shijieqin.github.io/2017/12/24/oracle-12C-单实例PDB插入到RAC环境下出现的问题/"/>
 
 
 
 
 
-  <title>标签: obs | ShijieQin</title>
+  <title>oracle 12C 单实例PDB插入到RAC环境下出现的问题 | ShijieQin</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -176,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -324,44 +326,261 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>obs<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/12/24/oracle-12C-单实例PDB插入到RAC环境下出现的问题/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shijie Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShijieQin">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">oracle 12C 单实例PDB插入到RAC环境下出现的问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-24T11:49:33+08:00">
+                2017-12-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle-12C/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle 12C</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle-12C/RAC/" itemprop="url" rel="index">
+                    <span itemprop="name">RAC</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle-12C/RAC/PDB/" itemprop="url" rel="index">
+                    <span itemprop="name">PDB</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/24/oracle-12C-单实例PDB插入到RAC环境下出现的问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/12/24/oracle-12C-单实例PDB插入到RAC环境下出现的问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/12/24/oracle-12C-单实例PDB插入到RAC环境下出现的问题/" class="leancloud_visitors" data-flag-title="oracle 12C 单实例PDB插入到RAC环境下出现的问题">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本文记录在oracle 12C，通过pdb插拔的方式将单实例转换为rac环境出现的问题。</p>
+<a id="more"></a>
+<h3 id="undo表空间被占用"><a href="#undo表空间被占用" class="headerlink" title="undo表空间被占用"></a>undo表空间被占用</h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h4><p>在迁移过程中，由于修改过源pdb的默认undo表空间，导致插入到rac环境的时候，出现undo表空间被占用的情况。</p>
+<p><strong><em>注：这里，使用的是local undo的模式</em></strong></p>
+<h4 id="问题重现"><a href="#问题重现" class="headerlink" title="问题重现"></a>问题重现</h4><h5 id="切换至测试pdb"><a href="#切换至测试pdb" class="headerlink" title="切换至测试pdb"></a>切换至测试pdb</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt; alter session set container = TEST;</div><div class="line">Session altered.</div></pre></td></tr></table></figure>
+<h5 id="查询默认undo表空间，及数据文件位置"><a href="#查询默认undo表空间，及数据文件位置" class="headerlink" title="查询默认undo表空间，及数据文件位置"></a>查询默认undo表空间，及数据文件位置</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">SQL&gt; select tablespace_name,</div><div class="line">       file_name,</div><div class="line">       AUTOEXTENSIBLE,</div><div class="line">       bytes / 1024 / 1024 size_mb</div><div class="line">  from dba_data_files</div><div class="line"> where tablespace_name like '%UNDO%'; </div><div class="line">TABLESPACE_NAME    FILE_NAME                                              AUTOEXTEN    SIZE_MB</div><div class="line"><span class="comment">---------------    ---------------------------------------------------    ---------    ----------</span></div><div class="line">UNDOTBS1           /u01/app/oracle/oradata/SRMCLOUD/test/undotbs01.dbf    YES          1515</div></pre></td></tr></table></figure>
+<h5 id="修改默认undo表空间"><a href="#修改默认undo表空间" class="headerlink" title="修改默认undo表空间"></a>修改默认undo表空间</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">SQL&gt; create undo tablespace undotbs2 datafile '/u01/app/oracle/oradata/SRMCLOUD/test/undotbs02.dbf' size 100m autoextend on;</div><div class="line">Tablespace created.</div><div class="line">SQL&gt; alter system set undo_tablespace='UNDOTBS2' scope=both;</div><div class="line">System altered.</div><div class="line">SQL&gt; drop tablespace UNDOTBS1 including contents and datafiles;</div><div class="line">Tablespace dropped.</div><div class="line">SQL&gt; show parameter undo</div><div class="line">NAME                                 TYPE                                 VALUE</div><div class="line"><span class="comment">------------------------------------ ---------------------------------    ------------------------------</span></div><div class="line">temp_undo_enabled                    boolean                              FALSE</div><div class="line">undo_management                      string                               AUTO</div><div class="line">undo_retention                       integer                              900</div><div class="line">undo_tablespace                      string                               UNDOTBS2</div></pre></td></tr></table></figure>
+<h5 id="切换回CDB"><a href="#切换回CDB" class="headerlink" title="切换回CDB"></a>切换回CDB</h5><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; alter session set container = CDB$ROOT</div></pre></td></tr></table></figure>
+<h5 id="拔出测试PDB"><a href="#拔出测试PDB" class="headerlink" title="拔出测试PDB"></a>拔出测试PDB</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SQL&gt; alter pluggable database TEST close immediate;</div><div class="line">Pluggable database altered.</div><div class="line">SQL&gt; alter pluggable database TEST unplug into '/u01/app/oracle/oradata/SRMCLOUD/test.xml';</div><div class="line">Pluggable database altered.</div><div class="line">SQL&gt; drop pluggable database TEST KEEP DATAFILES;</div><div class="line">Pluggable database dropped.</div></pre></td></tr></table></figure>
+<h5 id="在rac下插入pdb"><a href="#在rac下插入pdb" class="headerlink" title="在rac下插入pdb"></a>在rac下插入pdb</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt; CREATE PLUGGABLE DATABASE test USING '/u01/app/oracle/test.xml' SOURCE_FILE_NAME_CONVERT = ('/u01/app/oracle/oradata/SRMCLOUD/test/', '/u01/app/oracle/test/') MOVE FILE_NAME_CONVERT = ('/u01/app/oracle/test/', '+DATA/srmcloud/test/');</div><div class="line">Pluggable database created.</div></pre></td></tr></table></figure>
+<h5 id="启动新插入的pdb"><a href="#启动新插入的pdb" class="headerlink" title="启动新插入的pdb"></a>启动新插入的pdb</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SQL&gt; alter pluggable database TEST open instances=all;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">pluggable</span> <span class="keyword">database</span> <span class="keyword">TEST</span> <span class="keyword">open</span> instances=all</div><div class="line">*</div><div class="line"><span class="keyword">ERROR</span> <span class="keyword">at</span> line <span class="number">1</span>:</div><div class="line">ORA<span class="number">-65107</span>: <span class="keyword">Error</span> encountered <span class="keyword">when</span> processing the <span class="keyword">current</span> task <span class="keyword">on</span> <span class="keyword">instance</span>:<span class="number">1</span></div><div class="line">ORA<span class="number">-30013</span>: <span class="keyword">undo</span> <span class="keyword">tablespace</span> <span class="string">'UNDOTBS2'</span> <span class="keyword">is</span> currently <span class="keyword">in</span> <span class="keyword">use</span></div></pre></td></tr></table></figure>
+<h5 id="问题描述2"><a href="#问题描述2" class="headerlink" title="问题描述2"></a>问题描述2</h5><p>以上就重现了错误过程。</p>
+<p>刚开始只是以为更改了默认undo表空间的名称，导致在插入oracle rac环境下的时候，oracle自动添加新的undo失败。(oracle 12c rac下，每个实例上的pdb使用的是不同的undo表空间)</p>
+<p>针对以上猜想，尝试更改undo表空间为默认的名称后，重新插入，仍然失败</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">SQL&gt; alter pluggable database TEST open instances=all;</div><div class="line"><span class="keyword">alter</span> <span class="keyword">pluggable</span> <span class="keyword">database</span> <span class="keyword">TEST</span> <span class="keyword">open</span> instances=all</div><div class="line">*</div><div class="line"><span class="keyword">ERROR</span> <span class="keyword">at</span> line <span class="number">1</span>:</div><div class="line">ORA<span class="number">-65107</span>: <span class="keyword">Error</span> encountered <span class="keyword">when</span> processing the <span class="keyword">current</span> task <span class="keyword">on</span> <span class="keyword">instance</span>:<span class="number">1</span></div><div class="line">ORA<span class="number">-30013</span>: <span class="keyword">undo</span> <span class="keyword">tablespace</span> <span class="string">'UNDOTBS1'</span> <span class="keyword">is</span> currently <span class="keyword">in</span> <span class="keyword">use</span></div></pre></td></tr></table></figure>
+<h5 id="发现原因"><a href="#发现原因" class="headerlink" title="发现原因"></a>发现原因</h5><p>通过对比修改前与修改后的拔出文件<strong>test.xml</strong>发现，修改后比修改前，在拔出文件中多了一行如下参数</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">spfile</span>&gt;</span>*.undo_tablespace='UNDOTBS1'<span class="tag">&lt;/<span class="name">spfile</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>由于这个参数的原因，导致pdb在插入的时候，统一把undo表空间指向为’UNDOTBS1’导致的。</p>
+<p>解决方法就是，删除这一行数据即可。</p>
+<h5 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h5><figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SQL&gt;  alter pluggable database TEST open instances=all;</div><div class="line">Pluggable database altered.</div></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/06/21/s3fs-on-obs/" itemprop="url">
-              
-                <span itemprop="name">s3fs on obs</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-06-21T16:47:14+08:00"
-              content="2017-06-21" >
-          06-21
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/oracle-12C/" rel="tag"># oracle 12C</a>
+          
+            <a href="/tags/RAC/" rel="tag"># RAC</a>
+          
+            <a href="/tags/PDB/" rel="tag"># PDB</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/05/RAC删除节点/" rel="next" title="RAC删除节点">
+                <i class="fa fa-chevron-left"></i> RAC删除节点
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -369,6 +588,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -388,8 +613,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat.jpg"
@@ -500,6 +734,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undo表空间被占用"><span class="nav-number">2.</span> <span class="nav-text">undo表空间被占用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#问题描述"><span class="nav-number">2.1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#问题重现"><span class="nav-number">2.2.</span> <span class="nav-text">问题重现</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#切换至测试pdb"><span class="nav-number">2.2.1.</span> <span class="nav-text">切换至测试pdb</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#查询默认undo表空间，及数据文件位置"><span class="nav-number">2.2.2.</span> <span class="nav-text">查询默认undo表空间，及数据文件位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#修改默认undo表空间"><span class="nav-number">2.2.3.</span> <span class="nav-text">修改默认undo表空间</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#切换回CDB"><span class="nav-number">2.2.4.</span> <span class="nav-text">切换回CDB</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#拔出测试PDB"><span class="nav-number">2.2.5.</span> <span class="nav-text">拔出测试PDB</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#在rac下插入pdb"><span class="nav-number">2.2.6.</span> <span class="nav-text">在rac下插入pdb</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#启动新插入的pdb"><span class="nav-number">2.2.7.</span> <span class="nav-text">启动新插入的pdb</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题描述2"><span class="nav-number">2.2.8.</span> <span class="nav-text">问题描述2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#发现原因"><span class="nav-number">2.2.9.</span> <span class="nav-text">发现原因</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#问题解决"><span class="nav-number">2.2.10.</span> <span class="nav-text">问题解决</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -633,10 +883,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -660,6 +910,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 91758, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 91758, xid: "2017/12/24/oracle-12C-单实例PDB插入到RAC环境下出现的问题/"});
 		
 
 		(function() {

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shijieqin.github.io/2017/12/24/oracle-12C-%E5%8D%95%E5%AE%9E%E4%BE%8BPDB%E6%8F%92%E5%85%A5%E5%88%B0RAC%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2017-12-24T03:49:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shijieqin.github.io/2017/12/05/RAC%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9/</loc>
     
     <lastmod>2017-12-05T05:59:58.000Z</lastmod>
@@ -79,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/tablet/index.html</loc>
-    
-    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://shijieqin.github.io/categories/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
@@ -93,14 +93,21 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/about/index.html</loc>
+    <loc>https://shijieqin.github.io/tags/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/tags/index.html</loc>
+    <loc>https://shijieqin.github.io/tablet/index.html</loc>
+    
+    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/about/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     

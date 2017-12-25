@@ -4,6 +4,36 @@
 
     
   <url>
+    <loc>https://shijieqin.github.io/2017/12/24/oracle-12C-%E5%8D%95%E5%AE%9E%E4%BE%8BPDB%E6%8F%92%E5%85%A5%E5%88%B0RAC%E7%8E%AF%E5%A2%83%E4%B8%8B%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2017-12-24T03:49:33.000Z</lastmod>
+    <data>
+        <display>
+        <title>oracle 12C 单实例PDB插入到RAC环境下出现的问题</title>
+        <pubTime>2017-12-24T03:49:33.000Z</pubTime>
+        
+        <tag>oracle 12C</tag>
+         
+        <tag>RAC</tag>
+         
+        <tag>PDB</tag>
+         
+         
+           
+             
+              <breadCrumb title="oracle 12C" url="https://shijieqin.github.io/categories/oracle-12C/"/>
+          
+             
+              <breadCrumb title="RAC" url="https://shijieqin.github.io/categories/oracle-12C/RAC/"/>
+          
+             
+              <breadCrumb title="PDB" url="https://shijieqin.github.io/categories/oracle-12C/RAC/PDB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://shijieqin.github.io/2017/12/05/RAC%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9/</loc>
     <lastmod>2017-12-05T05:59:58.000Z</lastmod>
     <data>
