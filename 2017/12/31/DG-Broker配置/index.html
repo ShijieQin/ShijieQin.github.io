@@ -1,0 +1,1433 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="geQG87DNOY9IxB-ud0CnPUOUJ0f1nE8HbIx8C8yqpK8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="oracle,dg,broker,dgmgrl," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="ShijieQin" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="前言Dgmgrl表示Data Guard Manager Command Line Interface，用来管理维护Dataguard，而且该命令系统自带不需要额外安装，命令简单易上手，容易学习，比sqlplus用来更加简单一些.">
+<meta name="keywords" content="oracle,dg,broker,dgmgrl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="DG Broker配置">
+<meta property="og:url" content="https://shijieqin.github.io/2017/12/31/DG-Broker配置/index.html">
+<meta property="og:site_name" content="ShijieQin">
+<meta property="og:description" content="前言Dgmgrl表示Data Guard Manager Command Line Interface，用来管理维护Dataguard，而且该命令系统自带不需要额外安装，命令简单易上手，容易学习，比sqlplus用来更加简单一些.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-12-31T08:20:18.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="DG Broker配置">
+<meta name="twitter:description" content="前言Dgmgrl表示Data Guard Manager Command Line Interface，用来管理维护Dataguard，而且该命令系统自带不需要额外安装，命令简单易上手，容易学习，比sqlplus用来更加简单一些.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"posts","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://shijieqin.github.io/2017/12/31/DG-Broker配置/"/>
+
+
+
+
+
+  <title>DG Broker配置 | ShijieQin</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?71c7c23e291596e4dfe9269229294568";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">ShijieQin</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tablet">
+          <a href="/tablet" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-comments"></i> <br />
+            
+            留言板
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/12/31/DG-Broker配置/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shijie Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShijieQin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">DG Broker配置</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-31T16:20:18+08:00">
+                2017-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/dg/" itemprop="url" rel="index">
+                    <span itemprop="name">dg</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/dg/broker/" itemprop="url" rel="index">
+                    <span itemprop="name">broker</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/dg/broker/dgmgrl/" itemprop="url" rel="index">
+                    <span itemprop="name">dgmgrl</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/12/31/DG-Broker配置/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/12/31/DG-Broker配置/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/12/31/DG-Broker配置/" class="leancloud_visitors" data-flag-title="DG Broker配置">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Dgmgrl表示Data Guard Manager Command Line Interface，用来管理维护Dataguard，而且该命令系统自带不需要额外安装，命令简单易上手，容易学习，比sqlplus用来更加简单一些.</p>
+<a id="more"></a>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p><strong><em>注：本文的配置是基于我的另一篇文章<a href="/2017/12/28/Oracle11g-dataguard配置/" title="Oracle11g-dataguard配置">Oracle11g-dataguard配置</a>搭建出来的dg环境进行的配置</em></strong></p>
+<h4 id="配置监听"><a href="#配置监听" class="headerlink" title="配置监听"></a>配置监听</h4><p>主备库都需要配置监听，需添加如下监听内容</p>
+<p>主库(srmcloud)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">LISTENER =</div><div class="line">  (DESCRIPTION_LIST =</div><div class="line">    (DESCRIPTION =</div><div class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = srmcloud)(PORT = 1521))</div><div class="line">    )</div><div class="line">  )</div><div class="line">SID_LIST_LISTENER=</div><div class="line">  (SID_LIST =</div><div class="line">    (SID_DESC =</div><div class="line">      (GLOBAL_DBNAME = srmcloud)</div><div class="line">      (ORACLE_HOME = /home/oracle/opt/oracle/product/11.2.0/dbhome_1)</div><div class="line">      (SID_NAME = srmcloud)</div><div class="line">    )</div><div class="line">    (SID_DESC =</div><div class="line">      (GLOBAL_DBNAME = srmcloud_dgmgrl)</div><div class="line">      (ORACLE_HOME = /home/oracle/opt/oracle/product/11.2.0/dbhome_1)</div><div class="line">      (SID_NAME = srmcloud)</div><div class="line">    )</div><div class="line">  )</div></pre></td></tr></table></figure>
+<p>其中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">(SID_DESC =</div><div class="line">      (GLOBAL_DBNAME = srmcloud_dgmgrl)</div><div class="line">      (ORACLE_HOME = /home/oracle/opt/oracle/product/11.2.0/dbhome_1)</div><div class="line">      (SID_NAME = srmcloud)</div><div class="line">    )</div></pre></td></tr></table></figure>
+<p>为新添加的代码，GLOBAL_DBNAME一定要以<code>dgmgrl</code>结尾，备库一样，修改为如下内容</p>
+<p>备库(srmclouddg)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">LISTENER =</div><div class="line">  (DESCRIPTION_LIST =</div><div class="line">    (DESCRIPTION =</div><div class="line">      (ADDRESS = (PROTOCOL = TCP)(HOST = srmclouddg)(PORT = 1521))</div><div class="line">    )</div><div class="line">  )</div><div class="line">SID_LIST_LISTENER=</div><div class="line">  (SID_LIST =</div><div class="line">    (SID_DESC =</div><div class="line">      (GLOBAL_DBNAME = srmclouddg)</div><div class="line">      (ORACLE_HOME = /home/oracle/opt/oracle/product/11.2.0/dbhome_1)</div><div class="line">      (SID_NAME = srmcloud)</div><div class="line">    )</div><div class="line">    (SID_DESC =</div><div class="line">      (GLOBAL_DBNAME = srmclouddg_dgmgrl)</div><div class="line">      (ORACLE_HOME = /home/oracle/opt/oracle/product/11.2.0/dbhome_1)</div><div class="line">      (SID_NAME = srmcloud)</div><div class="line">    )</div><div class="line">  )</div></pre></td></tr></table></figure>
+<p><strong><em>注：添加完成后，重启主备库的监听</em></strong></p>
+<h4 id="配置DG-Broker-multiplexed-configuration-files"><a href="#配置DG-Broker-multiplexed-configuration-files" class="headerlink" title="配置DG Broker multiplexed configuration files"></a>配置DG Broker multiplexed configuration files</h4><p>如下操作在<strong>主备库</strong>都需要执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; alter system set dg_broker_config_file1=&apos;/home/oracle/opt/oracle/oradata/srmcloud/dg_config1.dat&apos; scope=both;</div><div class="line">System altered.</div><div class="line">SQL&gt; alter system set dg_broker_config_file2=&apos;/home/oracle/opt/oracle/oradata/srmcloud/dg_config2.dat&apos; scope=both;</div><div class="line">System altered.</div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<h4 id="start-the-Broker"><a href="#start-the-Broker" class="headerlink" title="start the Broker"></a>start the Broker</h4><p>如下操作在<strong>主备库</strong>都需要执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SQL&gt; alter system set dg_broker_start=true scope=both;</div><div class="line">System altered.</div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<p>这时可以查看后台启动了一个dmon进程</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[oracle@srmcloud ~]$ ps -ef | grep dmon</div><div class="line">oracle   20464     1  0 05:54 ?        00:00:00 ora_dmon_srmcloud</div><div class="line">oracle   20579 18643  0 06:16 pts/1    00:00:00 grep dmon</div><div class="line">[oracle@srmcloud ~]$</div></pre></td></tr></table></figure>
+<h4 id="配置Broker-Configuration"><a href="#配置Broker-Configuration" class="headerlink" title="配置Broker Configuration"></a>配置Broker Configuration</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[oracle@srmcloud ~]$ dgmgrl sys/handhand</div><div class="line">DGMGRL for Linux: Version 11.2.0.4.0 - 64bit Production</div><div class="line">Copyright (c) 2000, 2009, Oracle. All rights reserved.</div><div class="line">Welcome to DGMGRL, type &quot;help&quot; for information.</div><div class="line">Connected.</div><div class="line">DGMGRL&gt; create configuration srmcloud_srmclouddg_config as primary database is srmcloudconnect identifier is &apos;srmcloud&apos;;</div><div class="line">Configuration &quot;srmcloud_srmclouddg_config&quot; created with primary database &quot;srmcloud&quot;</div><div class="line">DGMGRL&gt;</div></pre></td></tr></table></figure>
+<p><strong><em>注：</em></strong></p>
+<ul>
+<li><strong><em>其中identifier后面的内容是tns中配置的tnsname</em></strong></li>
+<li><strong><em>有文章说在oracle12c中，由于配置了LOG_ARCHIVE_DEST_n的参数，导致报如下错误，Error: ORA-16698: LOG_ARCHIVE_DEST_n parameter set for object to be added，这种问题在11g中不会出现，至于12c是否真的会出现，可自行测试，解决办法就是将LOG_ARCHIVE_DEST_n参数置为空，等配置好之后再改回去。</em></strong></li>
+</ul>
+<h4 id="Add-the-standby-to-the-configuration"><a href="#Add-the-standby-to-the-configuration" class="headerlink" title="Add the standby to the configuration"></a>Add the standby to the configuration</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">DGMGRL&gt; add database srmclouddg as connect identifier is &apos;srmclouddg&apos;;</div><div class="line">Database &quot;srmclouddg&quot; added</div><div class="line">DGMGRL&gt;show configuration</div><div class="line">Configuration - srmcloud_srmclouddg_config</div><div class="line">  Protection Mode: MaxPerformance</div><div class="line">  Databases:</div><div class="line">    srmcloud   - Primary database</div><div class="line">    srmclouddg - Physical standby database</div><div class="line">Fast-Start Failover: DISABLED</div><div class="line">Configuration Status:</div><div class="line">DISABLED</div><div class="line">DGMGRL&gt;</div></pre></td></tr></table></figure>
+<h4 id="Enable-that-Configuration"><a href="#Enable-that-Configuration" class="headerlink" title="Enable that Configuration."></a>Enable that Configuration.</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">DGMGRL&gt; enable configuration;</div><div class="line">Enabled.</div><div class="line">DGMGRL&gt;  show configuration</div><div class="line">Configuration - srmcloud_srmclouddg_config</div><div class="line">  Protection Mode: MaxPerformance</div><div class="line">  Databases:</div><div class="line">    srmcloud   - Primary database</div><div class="line">    srmclouddg - Physical standby database</div><div class="line">Fast-Start Failover: DISABLED</div><div class="line">Configuration Status:</div><div class="line">SUCCESS</div><div class="line">DGMGRL&gt;</div></pre></td></tr></table></figure>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><h4 id="验证切换"><a href="#验证切换" class="headerlink" title="验证切换"></a>验证切换</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">DGMGRL&gt; switchover to srmclouddg;</div><div class="line">Performing switchover NOW, please wait...</div><div class="line">Operation requires a connection to instance &quot;srmcloud&quot; on database &quot;srmclouddg&quot;</div><div class="line">Connecting to instance &quot;srmcloud&quot;...</div><div class="line">Connected.</div><div class="line">New primary database &quot;srmclouddg&quot; is opening...</div><div class="line">Operation requires startup of instance &quot;srmcloud&quot; on database &quot;srmcloud&quot;</div><div class="line">Starting instance &quot;srmcloud&quot;...</div><div class="line">ORACLE instance started.</div><div class="line">Database mounted.</div><div class="line">Database opened.</div><div class="line">Switchover succeeded, new primary is &quot;srmclouddg&quot;</div><div class="line">DGMGRL&gt; show configuration;</div><div class="line">Configuration - srmcloud_srmclouddg_config</div><div class="line">  Protection Mode: MaxPerformance</div><div class="line">  Databases:</div><div class="line">    srmclouddg - Primary database</div><div class="line">    srmcloud   - Physical standby database</div><div class="line">Fast-Start Failover: DISABLED</div><div class="line">Configuration Status:</div><div class="line">SUCCESS</div><div class="line">DGMGRL&gt;</div></pre></td></tr></table></figure>
+<h4 id="验证手动关闭，并启动备机，自动启用日志应用"><a href="#验证手动关闭，并启动备机，自动启用日志应用" class="headerlink" title="验证手动关闭，并启动备机，自动启用日志应用"></a>验证手动关闭，并启动备机，自动启用日志应用</h4><p>之前需要手动启动日志应用才可以。</p>
+<p>这里使用的是上一步切换过的主备库，主库为srmclouddg，备库为srmcloud</p>
+<p>备库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">SQL&gt; shutdown immediate;</div><div class="line">Database closed.</div><div class="line">Database dismounted.</div><div class="line">ORACLE instance shut down.</div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<p>主库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">DGMGRL&gt; show database srmcloud</div><div class="line">Database - srmcloud</div><div class="line">  Role:            PHYSICAL STANDBY</div><div class="line">  Intended State:  OFFLINE</div><div class="line">  Transport Lag:   (unknown)</div><div class="line">  Apply Lag:       (unknown)</div><div class="line">  Apply Rate:      (unknown)</div><div class="line">  Real Time Query: OFF</div><div class="line">  Instance(s):</div><div class="line">    srmcloud</div><div class="line">Database Status:</div><div class="line">SHUTDOWN</div><div class="line">DGMGRL&gt;</div></pre></td></tr></table></figure>
+<p>备库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">SQL&gt; startup;</div><div class="line">ORACLE instance started.</div><div class="line">Total System Global Area 1553305600 bytes</div><div class="line">Fixed Size                  2253544 bytes</div><div class="line">Variable Size            1426066712 bytes</div><div class="line">Database Buffers          117440512 bytes</div><div class="line">Redo Buffers                7544832 bytes</div><div class="line">Database mounted.</div><div class="line">Database opened.</div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<p>主库：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">tabase - srmcloud</div><div class="line">  Role:            PHYSICAL STANDBY</div><div class="line">  Intended State:  APPLY-ON</div><div class="line">  Transport Lag:   0 seconds (computed 0 seconds ago)</div><div class="line">  Apply Lag:       0 seconds (computed 0 seconds ago)</div><div class="line">  Apply Rate:      0 Byte/s</div><div class="line">  Real Time Query: ON</div><div class="line">  Instance(s):</div><div class="line">    srmcloud</div><div class="line">Database Status:</div><div class="line">SUCCESS</div><div class="line">DGMGRL&gt;</div></pre></td></tr></table></figure>
+<p>可以看出，自动启用了日志应用，不需要在sqlplus中输入alter database recover managed standby database …类似的语句，并且备库自动启动为<code>PHYSICAL STANDBY</code>的角色，不需要手动指定，OPEN_MODE自动为<code>READ ONLY WITH APPLY</code>模式，也不需要手动指定</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/oracle/" rel="tag"># oracle</a>
+          
+            <a href="/tags/dg/" rel="tag"># dg</a>
+          
+            <a href="/tags/broker/" rel="tag"># broker</a>
+          
+            <a href="/tags/dgmgrl/" rel="tag"># dgmgrl</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/28/Oracle11g-dataguard配置/" rel="next" title="Oracle11g dataguard配置">
+                <i class="fa fa-chevron-left"></i> Oracle11g dataguard配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/cat.jpg"
+               alt="Shijie Qin" />
+          <p class="site-author-name" itemprop="name">Shijie Qin</p>
+           
+              <p class="site-description motion-element" itemprop="description">If I can do, I do!</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/shijieqin" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5746407016" target="_blank" title="Weibo">
+                  
+                    <i class="fa fa-fw fa-weibo"></i>
+                  
+                  Weibo
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+          <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+            <div class="links-of-blogroll-title">
+              <i class="fa  fa-fw fa-globe"></i>
+              Links
+            </div>
+            <ul class="links-of-blogroll-list">
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://www.going-link.com/" title="汉得SRM" target="_blank">汉得SRM</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://jaycelau.github.io/" title="Jaycelau" target="_blank">Jaycelau</a>
+                </li>
+              
+                <li class="links-of-blogroll-item">
+                  <a href="https://binnycoco.github.io/" title="Binnycoco" target="_blank">Binnycoco</a>
+                </li>
+              
+            </ul>
+          </div>
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">2.</span> <span class="nav-text">配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置监听"><span class="nav-number">2.1.</span> <span class="nav-text">配置监听</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置DG-Broker-multiplexed-configuration-files"><span class="nav-number">2.2.</span> <span class="nav-text">配置DG Broker multiplexed configuration files</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#start-the-Broker"><span class="nav-number">2.3.</span> <span class="nav-text">start the Broker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Broker-Configuration"><span class="nav-number">2.4.</span> <span class="nav-text">配置Broker Configuration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Add-the-standby-to-the-configuration"><span class="nav-number">2.5.</span> <span class="nav-text">Add the standby to the configuration</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Enable-that-Configuration"><span class="nav-number">2.6.</span> <span class="nav-text">Enable that Configuration.</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-number">3.</span> <span class="nav-text">验证</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#验证切换"><span class="nav-number">3.1.</span> <span class="nav-text">验证切换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验证手动关闭，并启动备机，自动启用日志应用"><span class="nav-number">3.2.</span> <span class="nav-text">验证手动关闭，并启动备机，自动启用日志应用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shijie Qin</span>
+</div>
+
+
+<div class="powered-by">
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+		<script type="text/javascript">
+		_hcwp = window._hcwp || [];
+
+		_hcwp.push({widget:"Bloggerstream", widget_id: 91758, selector:".hc-comment-count", label: "{\%COUNT%\}" });
+
+		
+		_hcwp.push({widget:"Stream", widget_id: 91758, xid: "2017/12/31/DG-Broker配置/"});
+		
+
+		(function() {
+		if("HC_LOAD_INIT" in window)return;
+		HC_LOAD_INIT = true;
+		var lang = (navigator.language || navigator.systemLanguage || navigator.userLanguage || "en").substr(0, 2).toLowerCase();
+		var hcc = document.createElement("script"); hcc.type = "text/javascript"; hcc.async = true;
+		hcc.src = ("https:" == document.location.protocol ? "https" : "http")+"://w.hypercomments.com/widget/hc/91758/"+lang+"/widget.js";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hcc, s.nextSibling);
+		})();
+		</script>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (search_path.endsWith("json")) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("H7TwNBtgIIghMC53BxOkcFRq-gzGzoHsz", "3D5aRTTKsW9ojldrOVrc1Oqn");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <!-- 背景动画 -->
+  <!--script type="text/javascript" src="/js/src/particle.js"></script-->
+  <!-- 页面点击小红心 -->
+  <!--script type="text/javascript" src="/js/src/love.js"></script-->
+  <script>
+  (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      if (curProtocol === 'https') {
+          bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+      }
+      else {
+          bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+      }
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+</body>
+</html>
