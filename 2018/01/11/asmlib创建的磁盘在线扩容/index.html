@@ -79,7 +79,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="oracle,asm," />
 
 
 
@@ -97,16 +97,18 @@
 
 
 
-<meta name="description" content="If I can do, I do!">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ShijieQin">
-<meta property="og:url" content="https://shijieqin.github.io/tags/hostname/index.html">
+<meta name="description" content="说明本环境的asm磁盘是通过asmlib创建的，不适用于scsi的磁盘。 新增磁盘为/dev/xvdd">
+<meta name="keywords" content="oracle,asm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="asmlib创建的磁盘在线扩容">
+<meta property="og:url" content="https://shijieqin.github.io/2018/01/11/asmlib创建的磁盘在线扩容/index.html">
 <meta property="og:site_name" content="ShijieQin">
-<meta property="og:description" content="If I can do, I do!">
+<meta property="og:description" content="说明本环境的asm磁盘是通过asmlib创建的，不适用于scsi的磁盘。 新增磁盘为/dev/xvdd">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-01-11T11:35:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ShijieQin">
-<meta name="twitter:description" content="If I can do, I do!">
+<meta name="twitter:title" content="asmlib创建的磁盘在线扩容">
+<meta name="twitter:description" content="说明本环境的asm磁盘是通过asmlib创建的，不适用于scsi的磁盘。 新增磁盘为/dev/xvdd">
 
 
 
@@ -134,13 +136,13 @@
 
 
 
-  <link rel="canonical" href="https://shijieqin.github.io/tags/hostname/"/>
+  <link rel="canonical" href="https://shijieqin.github.io/2018/01/11/asmlib创建的磁盘在线扩容/"/>
 
 
 
 
 
-  <title>标签: hostname | ShijieQin</title>
+  <title>asmlib创建的磁盘在线扩容 | ShijieQin</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -176,7 +178,7 @@
     
   
 
-  <div class="container sidebar-position-left  ">
+  <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -324,44 +326,242 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h1>hostname<small>标签</small>
-      </h1>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2018/01/11/asmlib创建的磁盘在线扩容/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shijie Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShijieQin">
+    </span>
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">asmlib创建的磁盘在线扩容</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-11T19:35:45+08:00">
+                2018-01-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/asm/" itemprop="url" rel="index">
+                    <span itemprop="name">asm</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/01/11/asmlib创建的磁盘在线扩容/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2018/01/11/asmlib创建的磁盘在线扩容/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2018/01/11/asmlib创建的磁盘在线扩容/" class="leancloud_visitors" data-flag-title="asmlib创建的磁盘在线扩容">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><p>本环境的asm磁盘是通过asmlib创建的，不适用于scsi的磁盘。</p>
+<p>新增磁盘为/dev/xvdd</p>
+<a id="more"></a>
+<h3 id="操作过程"><a href="#操作过程" class="headerlink" title="操作过程"></a>操作过程</h3><h4 id="分区"><a href="#分区" class="headerlink" title="分区"></a>分区</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">[root@srm-db ~]# fdisk /dev/xvdd </div><div class="line">Device contains neither a valid DOS partition table, nor Sun, SGI or OSF disklabel</div><div class="line">Building a new DOS disklabel with disk identifier 0x36af11d0.</div><div class="line">Changes will remain in memory only, until you decide to write them.</div><div class="line">After that, of course, the previous content won&apos;t be recoverable.</div><div class="line"></div><div class="line">Warning: invalid flag 0x0000 of partition table 4 will be corrected by w(rite)</div><div class="line"></div><div class="line">WARNING: DOS-compatible mode is deprecated. It&apos;s strongly recommended to</div><div class="line">         switch off the mode (command &apos;c&apos;) and change display units to</div><div class="line">         sectors (command &apos;u&apos;).</div><div class="line"></div><div class="line">Command (m for help): n</div><div class="line">Command action</div><div class="line">   e   extended</div><div class="line">   p   primary partition (1-4)</div><div class="line">p</div><div class="line">Partition number (1-4): 1</div><div class="line">First cylinder (1-65270, default 1): </div><div class="line">Using default value 1</div><div class="line">Last cylinder, +cylinders or +size&#123;K,M,G&#125; (1-65270, default 65270): </div><div class="line">Using default value 65270</div><div class="line"></div><div class="line">Command (m for help): w</div><div class="line">The partition table has been altered!</div><div class="line"></div><div class="line">Calling ioctl() to re-read partition table.</div><div class="line">Syncing disks.</div><div class="line">[root@srm-db ~]#</div></pre></td></tr></table></figure>
+<h4 id="查看现有ASM磁盘"><a href="#查看现有ASM磁盘" class="headerlink" title="查看现有ASM磁盘"></a>查看现有ASM磁盘</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@srm-db ~]# oracleasm listdisks</div><div class="line">DATA</div><div class="line">DATA2</div></pre></td></tr></table></figure>
+<h4 id="添加新的asm磁盘"><a href="#添加新的asm磁盘" class="headerlink" title="添加新的asm磁盘"></a>添加新的asm磁盘</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">[root@srm-db ~]# oracleasm createdisk DATA3 /dev/xvdd1</div><div class="line">Writing disk header: done</div><div class="line">Instantiating disk: done</div><div class="line">[root@srm-db ~]# oracleasm listdisks</div><div class="line">DATA</div><div class="line">DATA2</div><div class="line">DATA3</div><div class="line">[root@srm-db ~]#</div></pre></td></tr></table></figure>
+<h4 id="查看数据库中记录的asm磁盘"><a href="#查看数据库中记录的asm磁盘" class="headerlink" title="查看数据库中记录的asm磁盘"></a>查看数据库中记录的asm磁盘</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">[root@srm-db ~]# su - grid</div><div class="line">[grid@srm-db ~]$ sqlplus  / as sysasm </div><div class="line"></div><div class="line">SQL*Plus: Release 12.2.0.1.0 Production on Thu Jan 11 19:42:07 2018</div><div class="line"></div><div class="line">Copyright (c) 1982, 2016, Oracle.  All rights reserved.</div><div class="line"></div><div class="line"></div><div class="line">Connected to:</div><div class="line">Oracle Database 12c Enterprise Edition Release 12.2.0.1.0 - 64bit Production</div><div class="line"></div><div class="line">SQL&gt; select name, path, mode_status, state, disk_number,failgroup from v$asm_disk;</div><div class="line"></div><div class="line">NAME</div><div class="line">------------------------------</div><div class="line">PATH</div><div class="line">--------------------------------------------------------------------------------</div><div class="line">MODE_ST STATE	 DISK_NUMBER FAILGROUP</div><div class="line">------- -------- ----------- ------------------------------</div><div class="line"></div><div class="line">/dev/oracleasm/disks/DATA3</div><div class="line">ONLINE	NORMAL		   0</div><div class="line"></div><div class="line">DATA_0000</div><div class="line">/dev/oracleasm/disks/DATA</div><div class="line">ONLINE	NORMAL		   0 DATA_0000</div><div class="line"></div><div class="line">NAME</div><div class="line">------------------------------</div><div class="line">PATH</div><div class="line">--------------------------------------------------------------------------------</div><div class="line">MODE_ST STATE	 DISK_NUMBER FAILGROUP</div><div class="line">------- -------- ----------- ------------------------------</div><div class="line"></div><div class="line">DATA_0001</div><div class="line">/dev/oracleasm/disks/DATA2</div><div class="line">ONLINE	NORMAL		   1 DATA_0001</div><div class="line"></div><div class="line"></div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<p>新增的asm磁盘为<code>/dev/oracleasm/disks/DATA3</code></p>
+<h4 id="查看磁盘组名称"><a href="#查看磁盘组名称" class="headerlink" title="查看磁盘组名称"></a>查看磁盘组名称</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">SQL&gt; select group_number,name,TOTAL_MB, FREE_MB from v$asm_diskgroup</div><div class="line">  2  ;</div><div class="line"></div><div class="line">GROUP_NUMBER NAME			      TOTAL_MB	  FREE_MB</div><div class="line">------------ ------------------------------ ---------- ----------</div><div class="line">	   1 DATA			       1023988	    36588</div><div class="line"></div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<p>DATA磁盘组就是要扩容的磁盘组</p>
+<h4 id="扩容DATA磁盘组"><a href="#扩容DATA磁盘组" class="headerlink" title="扩容DATA磁盘组"></a>扩容DATA磁盘组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">SQL&gt; alter diskgroup DATA add disk &apos;/dev/oracleasm/disks/DATA3&apos; rebalance power 10;</div><div class="line"></div><div class="line">Diskgroup altered.</div><div class="line"></div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<h4 id="观察reblance"><a href="#观察reblance" class="headerlink" title="观察reblance"></a>观察reblance</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">SQL&gt; select * from v$asm_operation;</div><div class="line"></div><div class="line">GROUP_NUMBER OPERA PASS      STAT      POWER	 ACTUAL      SOFAR   EST_WORK</div><div class="line">------------ ----- --------- ---- ---------- ---------- ---------- ----------</div><div class="line">  EST_RATE EST_MINUTES ERROR_CODE					CON_ID</div><div class="line">---------- ----------- -------------------------------------------- ----------</div><div class="line">	   1 REBAL COMPACT   WAIT	  10	     10 	 0	    0</div><div class="line">	 0	     0							     0</div><div class="line"></div><div class="line">	   1 REBAL REBALANCE RUN	  10	     10       5531	82304</div><div class="line">      2268	    33							     0</div><div class="line"></div><div class="line">	   1 REBAL REBUILD   DONE	  10	     10 	 0	    0</div><div class="line">	 0	     0							     0</div><div class="line"></div><div class="line"></div><div class="line">SQL&gt;</div></pre></td></tr></table></figure>
+<p>当没有输出时，则表明reblance完成</p>
+<h4 id="修改reblance-power"><a href="#修改reblance-power" class="headerlink" title="修改reblance power"></a>修改reblance power</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ALTER DISKGROUP DATA1 REBALANCE POWER 1;</div></pre></td></tr></table></figure>
 
-      <h2 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2017/11/24/Centos6修改Hostname/" itemprop="url">
-              
-                <span itemprop="name">Centos6修改Hostname</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h2>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2017-11-24T13:52:09+08:00"
-              content="2017-11-24" >
-          11-24
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/oracle/" rel="tag"># oracle</a>
+          
+            <a href="/tags/asm/" rel="tag"># asm</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/12/31/DG-Broker配置/" rel="next" title="DG Broker配置">
+                <i class="fa fa-chevron-left"></i> DG Broker配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
 
 
           </div>
@@ -369,6 +569,12 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="hypercomments_widget"></div>
+    
+  </div>
+
 
         </div>
         
@@ -388,8 +594,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/cat.jpg"
@@ -500,6 +715,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#说明"><span class="nav-number">1.</span> <span class="nav-text">说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#操作过程"><span class="nav-number">2.</span> <span class="nav-text">操作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分区"><span class="nav-number">2.1.</span> <span class="nav-text">分区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看现有ASM磁盘"><span class="nav-number">2.2.</span> <span class="nav-text">查看现有ASM磁盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加新的asm磁盘"><span class="nav-number">2.3.</span> <span class="nav-text">添加新的asm磁盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看数据库中记录的asm磁盘"><span class="nav-number">2.4.</span> <span class="nav-text">查看数据库中记录的asm磁盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看磁盘组名称"><span class="nav-number">2.5.</span> <span class="nav-text">查看磁盘组名称</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#扩容DATA磁盘组"><span class="nav-number">2.6.</span> <span class="nav-text">扩容DATA磁盘组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#观察reblance"><span class="nav-number">2.7.</span> <span class="nav-text">观察reblance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改reblance-power"><span class="nav-number">2.8.</span> <span class="nav-text">修改reblance power</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -633,10 +864,10 @@
   
 
   
-    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-  
+
 
   
 
@@ -660,6 +891,8 @@
 
 		_hcwp.push({widget:"Bloggerstream", widget_id: 91758, selector:".hc-comment-count", label: "{\%COUNT%\}" });
 
+		
+		_hcwp.push({widget:"Stream", widget_id: 91758, xid: "2018/01/11/asmlib创建的磁盘在线扩容/"});
 		
 
 		(function() {

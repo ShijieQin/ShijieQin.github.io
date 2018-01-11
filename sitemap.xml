@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shijieqin.github.io/2018/01/11/asmlib%E5%88%9B%E5%BB%BA%E7%9A%84%E7%A3%81%E7%9B%98%E5%9C%A8%E7%BA%BF%E6%89%A9%E5%AE%B9/</loc>
+    
+    <lastmod>2018-01-11T11:35:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shijieqin.github.io/2017/12/31/DG-Broker%E9%85%8D%E7%BD%AE/</loc>
     
     <lastmod>2017-12-31T08:20:18.000Z</lastmod>
@@ -100,20 +107,6 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/about/index.html</loc>
-    
-    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://shijieqin.github.io/tags/index.html</loc>
-    
-    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://shijieqin.github.io/tablet/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
@@ -122,6 +115,20 @@
   
   <url>
     <loc>https://shijieqin.github.io/categories/index.html</loc>
+    
+    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/about/index.html</loc>
+    
+    <lastmod>2017-10-08T11:55:30.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/tags/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     
