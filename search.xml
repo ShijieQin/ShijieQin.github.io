@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[oracle 11.2.0.4 RAC PSU PATCH]]></title>
+    <url>%2F2018%2F03%2F06%2Foracle-11-2-0-4-RAC-PSU-PATCH%2F</url>
+    <content type="text"><![CDATA[简介 Key Value 操作系统 centos 7.4 数据库版本 11.2.0.4 集群 RAC 下载相关补丁使用如下链接下载opatch: Patch 6880880 使用如下链接下载GI PSU和DB PSU： PSU 下载最新的GI PSU 下载最新的DB PSU 阅读GI PSU的README文档解压p27107360_112040_Linux-x86-64.zip 阅读27107360下的README.html 要求OPatch的版本为11.2.0.3.6或更高 使用如下命令查看OPatch的版本 $ORACLE_HOME/OPatch/opatch version 版本为11.2.0.3.4，因此需要升级OPatch 升级OPatch两个节点GRID用户和ORACLE用户都做如下操作 12mv $ORACLE_HOME/OPatch $ORACLE_HOME/OPatch.pre6880880 unzip -d $ORACLE_HOME &lt;OPATCH-ZIP_LOCATION&gt;p6880880_112000_Linux-x86-64.zip 解压补丁文件1unzip p27107360_112040_Linux-x86-64.zip 检查补丁之间有无冲突需要注意grid用户的$ORACLE_HOME 的权限 使用grid用户和oracle用户执行如下命令检测有无冲突 12cd 27107360$ORACLE_HOME/OPatch/opatch prereq CheckConflictAgainstOHWithDetail -ph ./ GRID用户执行结果如下 ORACLE用户执行结果如下 节点1打补丁需要关闭节点1 grid用户 1$ORACLE_HOME/OPatch/opatch napply -oh $ORACLE_HOME -local /u01/software/gi_psu/27107360/ oracle 用户 1$ORACLE_HOME/OPatch/opatch napply -oh $ORACLE_HOME -local /u01/software/gi_psu/27107360/ 报错，补丁22502505需要安装11.2.0.4.0的oracle.usm 这里只需要打26925576即可 1$ORACLE_HOME/OPatch/opatch napply -oh $ORACLE_HOME -local /u01/software/gi_psu/27107360/26925576 输出略 。。。 节点2打补丁与节点1打补丁的操作一模一样 打完之后启动数据库集群 升级数据字典12345678910cd $ORACLE_HOME/rdbms/adminsqlplus /nologSQL&gt; CONNECT / AS SYSDBASQL&gt; @catbundle.sql psu applySQL&gt; QUITcd $ORACLE_HOME/rdbms/adminsqlplus /nologSQL&gt; CONNECT / AS SYSDBASQL&gt; @utlrp.sql 重启数据库集群 验证补丁是否打成功各节点的GI HOME和ORACLE HOME都执行验证。 12$ cd $ORACLE_HOME/OPatch$ ./opatch lsinventory 数据库的验证。 1SQL&gt; select * from dba_registry_history;]]></content>
+      <categories>
+        <category>oracle</category>
+        <category>rac</category>
+        <category>patch</category>
+      </categories>
+      <tags>
+        <tag>oracle</tag>
+        <tag>rac</tag>
+        <tag>patch</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[shell 编程]]></title>
     <url>%2F2018%2F01%2F12%2Fshell-%E7%BC%96%E7%A8%8B%2F</url>
     <content type="text"><![CDATA[描述记录shell编程出现的坑 SHELL 参数 ${parameter:?word} 当parameter指示的参数没有被设值的时候，将会通过标准错误的方式显示word中的语句。]]></content>
