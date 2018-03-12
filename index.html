@@ -495,20 +495,20 @@
 </table>
 <h3 id="下载相关补丁"><a href="#下载相关补丁" class="headerlink" title="下载相关补丁"></a>下载相关补丁</h3><p>使用如下链接下载opatch:</p>
 <p><a href="https://updates.oracle.com/download/6880880.html" target="_blank" rel="external"><strong>Patch 6880880</strong></a></p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/0E6496DB-55E6-48F7-8A09-FE1B0912270C.png" alt="0E6496DB-55E6-48F7-8A09-FE1B0912270C"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/0E6496DB-55E6-48F7-8A09-FE1B0912270C.png" alt="Patch" title="Patch">
 <p>使用如下链接下载GI PSU和DB PSU：</p>
 <p><a href="https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=348876990616918&amp;id=2285559.1&amp;_afrWindowMode=0&amp;_adf.ctrl-state=11pj6gra9g_4" target="_blank" rel="external">PSU</a></p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/62A03F6E-D3BF-43CC-993E-64B7969E611E.png" alt="62A03F6E-D3BF-43CC-993E-64B7969E611E"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/62A03F6E-D3BF-43CC-993E-64B7969E611E.png" alt="GIPSU" title="GIPSU">
 <p>下载最新的GI PSU</p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/AA5B7B78-6B61-4549-8486-C59D16EA9F19.png" alt="AA5B7B78-6B61-4549-8486-C59D16EA9F19"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/AA5B7B78-6B61-4549-8486-C59D16EA9F19.png" alt="DBPSU" title="DBPSU">
 <p>下载最新的DB PSU</p>
 <h3 id="阅读GI-PSU的README文档"><a href="#阅读GI-PSU的README文档" class="headerlink" title="阅读GI PSU的README文档"></a>阅读GI PSU的README文档</h3><p>解压p27107360_112040_Linux-x86-64.zip</p>
 <p>阅读<code>27107360</code>下的README.html</p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/410A9E5C-A7A2-40D5-A463-F1BC94F9DBFD.png" alt="410A9E5C-A7A2-40D5-A463-F1BC94F9DBFD"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/410A9E5C-A7A2-40D5-A463-F1BC94F9DBFD.png" alt="README.html" title="README.html">
 <p>要求OPatch的版本为11.2.0.3.6或更高</p>
 <p>使用如下命令查看OPatch的版本</p>
 <p><code>$ORACLE_HOME/OPatch/opatch version</code></p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/65D08584-D9D9-48C6-9749-04120BC956C9.png" alt="65D08584-D9D9-48C6-9749-04120BC956C9"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/65D08584-D9D9-48C6-9749-04120BC956C9.png" alt="version" title="version">
 <p>版本为11.2.0.3.4，因此需要升级OPatch</p>
 <h3 id="升级OPatch"><a href="#升级OPatch" class="headerlink" title="升级OPatch"></a>升级OPatch</h3><p>两个节点GRID用户和ORACLE用户都做如下操作</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">mv $ORACLE_HOME/OPatch $ORACLE_HOME/OPatch.pre6880880 </div><div class="line">unzip -d $ORACLE_HOME &lt;OPATCH-ZIP_LOCATION&gt;p6880880_112000_Linux-x86-64.zip</div></pre></td></tr></table></figure>
@@ -517,18 +517,18 @@
 <p>使用grid用户和oracle用户执行如下命令检测有无冲突</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">cd 27107360</div><div class="line">$ORACLE_HOME/OPatch/opatch prereq CheckConflictAgainstOHWithDetail -ph ./</div></pre></td></tr></table></figure>
 <p>GRID用户执行结果如下</p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/E0981114-D126-4DCC-B4C9-367E0178A2C5.png" alt="E0981114-D126-4DCC-B4C9-367E0178A2C5"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/E0981114-D126-4DCC-B4C9-367E0178A2C5.png" alt="E0981114-D126-4DCC-B4C9-367E0178A2C5" title="E0981114-D126-4DCC-B4C9-367E0178A2C5">
 <p>ORACLE用户执行结果如下</p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/DDF83237-8128-4CE9-B2B9-B89188487CE7.png" alt="DDF83237-8128-4CE9-B2B9-B89188487CE7"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/DDF83237-8128-4CE9-B2B9-B89188487CE7.png" alt="DDF83237-8128-4CE9-B2B9-B89188487CE7" title="DDF83237-8128-4CE9-B2B9-B89188487CE7">
 <h3 id="节点1打补丁"><a href="#节点1打补丁" class="headerlink" title="节点1打补丁"></a>节点1打补丁</h3><p>需要关闭节点1</p>
 <p>grid用户</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ORACLE_HOME/OPatch/opatch napply -oh $ORACLE_HOME -local /u01/software/gi_psu/27107360/</div></pre></td></tr></table></figure>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/B0EE43C2-0243-4572-B30D-3A7E9C578695.png" alt="B0EE43C2-0243-4572-B30D-3A7E9C578695"></p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/0C4D1C68-8A41-456D-A13B-C9074D272051.png" alt="0C4D1C68-8A41-456D-A13B-C9074D272051"></p>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/4E2FB3E2-E8B2-4D80-9336-9BA4A931E3B7.png" alt="4E2FB3E2-E8B2-4D80-9336-9BA4A931E3B7"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/B0EE43C2-0243-4572-B30D-3A7E9C578695.png" alt="1" title="1">
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/0C4D1C68-8A41-456D-A13B-C9074D272051.png" alt="1" title="1">
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/4E2FB3E2-E8B2-4D80-9336-9BA4A931E3B7.png" alt="1" title="1">
 <p>oracle 用户</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ORACLE_HOME/OPatch/opatch napply -oh $ORACLE_HOME -local /u01/software/gi_psu/27107360/</div></pre></td></tr></table></figure>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/CAC0761E-F98A-4F5A-8D44-D1E5E358F3C9.png" alt="CAC0761E-F98A-4F5A-8D44-D1E5E358F3C9"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/CAC0761E-F98A-4F5A-8D44-D1E5E358F3C9.png" alt="1" title="1">
 <p>报错，补丁22502505需要安装11.2.0.4.0的oracle.usm</p>
 <p>这里只需要打26925576即可</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ORACLE_HOME/OPatch/opatch napply -oh $ORACLE_HOME -local /u01/software/gi_psu/27107360/26925576</div></pre></td></tr></table></figure>
@@ -540,7 +540,7 @@
 <p>重启数据库集群</p>
 <h3 id="验证补丁是否打成功"><a href="#验证补丁是否打成功" class="headerlink" title="验证补丁是否打成功"></a>验证补丁是否打成功</h3><p>各节点的GI HOME和ORACLE HOME都执行验证。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd $ORACLE_HOME/OPatch</div><div class="line">$ ./opatch lsinventory</div></pre></td></tr></table></figure>
-<p><img src="oracle-11-2-0-4-RAC-PSU-PATCH/7C617DFC-B085-4C91-9537-BB87A92F5323.png" alt="7C617DFC-B085-4C91-9537-BB87A92F5323"></p>
+<img src="/2018/03/06/oracle-11-2-0-4-RAC-PSU-PATCH/7C617DFC-B085-4C91-9537-BB87A92F5323.png" alt="1" title="1">
 <p>数据库的验证。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">SQL&gt; select * from dba_registry_history;</div></pre></td></tr></table></figure>
 
