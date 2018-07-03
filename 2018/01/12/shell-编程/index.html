@@ -97,18 +97,20 @@
 
 
 
-<meta name="description" content="描述记录shell编程出现的坑 SHELL 参数 ${parameter:?word}  当parameter指示的参数没有被设值的时候，将会通过标准错误的方式显示word中的语句。">
+<meta name="description" content="描述记录shell编程出现的坑和一些常用的语法">
 <meta name="keywords" content="shell">
 <meta property="og:type" content="article">
 <meta property="og:title" content="shell 编程">
 <meta property="og:url" content="https://shijieqin.github.io/2018/01/12/shell-编程/index.html">
 <meta property="og:site_name" content="ShijieQin">
-<meta property="og:description" content="描述记录shell编程出现的坑 SHELL 参数 ${parameter:?word}  当parameter指示的参数没有被设值的时候，将会通过标准错误的方式显示word中的语句。">
+<meta property="og:description" content="描述记录shell编程出现的坑和一些常用的语法">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqp12rs566j30v6082wg5.jpg">
 <meta property="og:updated_time" content="2018-01-12T07:11:56.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="shell 编程">
-<meta name="twitter:description" content="描述记录shell编程出现的坑 SHELL 参数 ${parameter:?word}  当parameter指示的参数没有被设值的时候，将会通过标准错误的方式显示word中的语句。">
+<meta name="twitter:description" content="描述记录shell编程出现的坑和一些常用的语法">
+<meta name="twitter:image" content="https://ws2.sinaimg.cn/large/006tNc79ly1fqp12rs566j30v6082wg5.jpg">
 
 
 
@@ -445,11 +447,48 @@
       
 
       
-        <h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>记录shell编程出现的坑</p>
+        <h3 id="描述"><a href="#描述" class="headerlink" title="描述"></a>描述</h3><p>记录shell编程出现的坑和一些常用的语法</p>
+<a id="more"></a>
 <h3 id="SHELL-参数"><a href="#SHELL-参数" class="headerlink" title="SHELL 参数"></a>SHELL 参数</h3><ul>
 <li>${parameter:?word}</li>
 </ul>
 <p><em>当parameter指示的参数没有被设值的时候，将会通过标准错误的方式显示word中的语句。</em></p>
+<h3 id="shell中各种括号的使用记录"><a href="#shell中各种括号的使用记录" class="headerlink" title="shell中各种括号的使用记录"></a>shell中各种括号的使用记录</h3><h4 id="小括号-又称圆括号"><a href="#小括号-又称圆括号" class="headerlink" title="小括号(又称圆括号)"></a>小括号(又称圆括号)</h4><h5 id="单小括号"><a href="#单小括号" class="headerlink" title="单小括号"></a>单小括号</h5><ol>
+<li><p>新开一个进程来执行命令</p>
+<p><img src="https://ws2.sinaimg.cn/large/006tNc79ly1fqp12rs566j30v6082wg5.jpg" alt="mage-20180425172533"></p>
+<p>如图所示，<strong>括号中的命令将会新开一个子shell顺序执行，所以括号中的变量不能够被脚本余下的部分使用。括号中多个命令之间用分号隔开，最后一个命令可以没有分号，各命令和括号之间不必有空格。</strong></p>
+</li>
+<li><p>作为$()来使用用于将()中的命令执行的结果替换回原来的位置</p>
+</li>
+<li><p>用于初始化数组。如：array=(a b c d)</p>
+</li>
+</ol>
+<h5 id="双小括号"><a href="#双小括号" class="headerlink" title="双小括号"></a>双小括号</h5><ol>
+<li><p>整数扩展。这种扩展计算是整数型的计算，不支持浮点型。((exp))结构扩展并计算一个算术表达式的值，如果表达式的结果为0，那么返回的退出状态码为1，或者 是”假”，而一个非零值的表达式所返回的退出状态码将为0，或者是”true”。若是逻辑判断，表达式exp为真则为1,假则为0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">[root@zabbix-server ~]# NUM=0</div><div class="line">[root@zabbix-server ~]# if (($NUM));then echo true;else echo false;fi</div><div class="line">false</div><div class="line">[root@zabbix-server ~]# NUM=1</div><div class="line">[root@zabbix-server ~]# if (($NUM));then echo true;else echo false;fi</div><div class="line">true</div><div class="line">[root@zabbix-server ~]# if ((1&gt;2));then echo true;else echo false;fi</div><div class="line">false</div><div class="line">[root@zabbix-server ~]# if ((1&lt;2));then echo true;else echo false;fi</div><div class="line">true</div><div class="line">[root@zabbix-server ~]# if ((1==2));then echo true;else echo false;fi</div><div class="line">false</div></pre></td></tr></table></figure>
+</li>
+<li><p>只要括号中的运算符、表达式符合C语言运算规则，都可用在\$((exp))中，甚至是三目运算符。作不同进位(如二进制、八进制、十六进制)运算时，输出结果全都自动转化成了十进制。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@zabbix-server ~]# echo $((16#10))</div><div class="line">16</div></pre></td></tr></table></figure>
+</li>
+<li><p>做数学运算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">[root@zabbix-server ~]# a=1</div><div class="line">[root@zabbix-server ~]# ((a++))</div><div class="line">[root@zabbix-server ~]# echo $a</div><div class="line">2</div><div class="line">[root@zabbix-server ~]# ((a--))</div><div class="line">[root@zabbix-server ~]# echo $a</div><div class="line">1</div><div class="line">[root@zabbix-server ~]# ((a=a+2))</div><div class="line">[root@zabbix-server ~]# echo $a</div><div class="line">3</div><div class="line">[root@zabbix-server ~]# ((a=a*2))</div><div class="line">[root@zabbix-server ~]# echo $a</div><div class="line">6</div></pre></td></tr></table></figure>
+</li>
+<li><p>常用于算术运算比较，双括号中的变量可以不使用$符号前缀。括号内支持多个表达式用逗号分开。 只要括号中的表达式符合C语言运算规则,比如可以直接使用for((i=0;i&lt;5;i++))</p>
+</li>
+</ol>
+<h5 id="特殊公式"><a href="#特殊公式" class="headerlink" title="特殊公式"></a>特殊公式</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $&#123;ZABBIX_SOURCE_DIR:=zabbix-3.4.8&#125;</div></pre></td></tr></table></figure>
+<p>作用是如果ZABBIX_SOURCE_DIR不为空则输出$ZABBIX_SOURCE_DIR，否则输出zabbix-3.4.8，同时把zabbix-3.4.8赋值给ZABBIX_SOURCE_DIR。</p>
+<h3 id="执行命令时不走alias"><a href="#执行命令时不走alias" class="headerlink" title="执行命令时不走alias"></a>执行命令时不走alias</h3><blockquote>
+<p>关于Linux的拷贝命令我们都知道cp的参数 -f的意思是：</p>
+<p>-f, –force                  if an existing destination file cannot be opened, remove it and try again</p>
+<p>也就是说-f可以覆盖目的目录下有的文件，</p>
+<p>但你有没有发现过这种情况，即使使用了-f也无法覆盖？</p>
+<p>原因何在呢？</p>
+<p>默认cp命令是有别名(alias cp=’cp -i’)的,无法强制覆盖,即使你用 -f 参数也无法强制覆盖文件。</p>
+<p>可以使用\cp 执行cp命令时不走alias </p>
+<p><code>\cp * -rf ../../test</code></p>
+<p>网上还有一种解决方法：临时取消cp的alias</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&gt;</span>#unalias cp</div><div class="line"><span class="meta">&gt;</span>#cp a /test/a</div><div class="line"><span class="meta">&gt;</span></div></pre></td></tr></table></figure></blockquote>
 
       
     </div>
@@ -601,7 +640,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -612,7 +651,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -623,7 +662,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -707,7 +746,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SHELL-参数"><span class="nav-number">2.</span> <span class="nav-text">SHELL 参数</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#描述"><span class="nav-number">1.</span> <span class="nav-text">描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SHELL-参数"><span class="nav-number">2.</span> <span class="nav-text">SHELL 参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell中各种括号的使用记录"><span class="nav-number">3.</span> <span class="nav-text">shell中各种括号的使用记录</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#小括号-又称圆括号"><span class="nav-number">3.1.</span> <span class="nav-text">小括号(又称圆括号)</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#单小括号"><span class="nav-number">3.1.1.</span> <span class="nav-text">单小括号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#双小括号"><span class="nav-number">3.1.2.</span> <span class="nav-text">双小括号</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#特殊公式"><span class="nav-number">3.1.3.</span> <span class="nav-text">特殊公式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行命令时不走alias"><span class="nav-number">4.</span> <span class="nav-text">执行命令时不走alias</span></a></li></ol></div>
             
 
           </div>

@@ -551,7 +551,14 @@
 <p>经过以上配置，客户端就能连接上vpn服务器了(服务器端的1194端口要开放)，但是并不能访问内网服务器，<br>因为vpn服务器没有配置虚拟ip的转发。</p>
 <h4 id="配置服务器端iptables"><a href="#配置服务器端iptables" class="headerlink" title="配置服务器端iptables"></a>配置服务器端iptables</h4><p>通过如下命令来达到将某个网段的IP转发到主网卡上，以达到与内网服务器通信的目的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">iptables -t nat -A POSTROUTING -s 10.0.1.0/24 -d 192.168.0.0/24 -o eth0 -j MASQUERADE</div></pre></td></tr></table></figure></p>
 <p>为了实现不同用户不同权限，需要做如下操作来限制不同网段的用户的访问权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">iptables -t nat -A POSTROUTING -s 10.0.0.0/24 -o eth0 -j MASQUERADE</div><div class="line">iptables -t nat -A POSTROUTING -s 10.0.1.0/24 -d 192.168.0.0/24 -o eth0 -j MASQUERADE</div><div class="line">iptables -t nat -A POSTROUTING -s 10.0.1.0/24 -d 192.168.1.0/24 -o eth0 -j MASQUERADE</div><div class="line">iptables -t nat -A POSTROUTING -s 10.0.1.0/24 -d 192.168.5.0/24 -o eth0 -j MASQUERADE</div><div class="line">iptables -t nat -A POSTROUTING -s 10.0.2.0/24 -d 192.168.3.0/24 -o eth0 -j MASQUERADE</div><div class="line">iptables -t nat -A POSTROUTING -s 10.0.2.0/24 -d 192.168.4.0/24 -o eth0 -j MASQUERADE</div><div class="line">iptables -t nat -A POSTROUTING -s 10.0.2.0/24 -d 192.168.5.0/24 -o eth0 -j MASQUERADE</div></pre></td></tr></table></figure></p>
-<p>经过如此配置，即可访问内网<br>配置完成后，使用如下命令保存iptables 规则到文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service iptables save</div></pre></td></tr></table></figure></p>
+<p>经过如此配置，即可访问内网</p>
+<p>如果不能访问，使用如下命令检查服务器是否允许ip_forward</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/sbin/sysctl -a | grep net.ipv4.ip_forward</div></pre></td></tr></table></figure>
+<p>确保<code>net.ipv4.ip_forward</code>的值为1，如果不为1，修改<code>/etc/sysctl.conf</code>文件，内容如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">net.ipv4.ip_forward = 1</div></pre></td></tr></table></figure>
+<p>使用<code>sysctl -p</code>命令使修改生效</p>
+<p>配置完成后，使用如下命令保存iptables 规则到文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">service iptables save</div></pre></td></tr></table></figure>
 <h4 id="实现用户名密码登录"><a href="#实现用户名密码登录" class="headerlink" title="实现用户名密码登录"></a>实现用户名密码登录</h4><p>在经过以上配置后，再来实现用户名密码登录就简单多了，只需要改一些配置即可。</p>
 <h5 id="修改服务器端配置"><a href="#修改服务器端配置" class="headerlink" title="修改服务器端配置"></a>修改服务器端配置</h5><p>编辑/etc/openvpn/server.conf,添加如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">plugin /usr/lib64/openvpn/plugin/lib/openvpn-auth-pam.so login #我是64位操作系统</div><div class="line">client-cert-not-required #只需验证用户名密码，不要求客户端证书</div><div class="line">username-as-common-name #用户名做common-name，既用户名相当于客户端名，个性化的时候使用用户名即可。</div></pre></td></tr></table></figure></p>
 <p>编辑客户端配置文件，既C:\Program Files\OpenVPN\sample-config\client.ovpn<br>注释掉如下内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">;cert client.crt</div><div class="line">;key client.key</div></pre></td></tr></table></figure></p>
@@ -708,7 +715,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -719,7 +726,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">26</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -730,7 +737,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
