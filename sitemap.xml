@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://shijieqin.github.io/2018/11/29/oracle12-2rac%E6%96%B0%E5%A2%9E%E8%8A%82%E7%82%B9%E5%90%8E%E5%87%BA%E7%8E%B0undo%E8%A2%AB%E5%8D%A0%E7%94%A8/</loc>
+    
+    <lastmod>2018-11-29T02:03:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://shijieqin.github.io/2018/08/29/python%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</loc>
+    
+    <lastmod>2018-08-29T02:43:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://shijieqin.github.io/2018/06/26/brainwave/</loc>
     
     <lastmod>2018-06-26T03:00:37.000Z</lastmod>
@@ -142,7 +156,7 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/tags/index.html</loc>
+    <loc>https://shijieqin.github.io/categories/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     
@@ -163,7 +177,7 @@
   </url>
   
   <url>
-    <loc>https://shijieqin.github.io/categories/index.html</loc>
+    <loc>https://shijieqin.github.io/tags/index.html</loc>
     
     <lastmod>2017-10-08T11:55:30.000Z</lastmod>
     

@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[oracle12.2rac新增节点后出现undo被占用]]></title>
+    <url>%2F2018%2F11%2F29%2Foracle12-2rac%E6%96%B0%E5%A2%9E%E8%8A%82%E7%82%B9%E5%90%8E%E5%87%BA%E7%8E%B0undo%E8%A2%AB%E5%8D%A0%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[描述ORACLE 12.2 rac环境下新增一个节点之后，新增节点上的PDB启动失败。下面简单记录下解决问题的过程，有时间再详细梳理。 解决过程表象：​ 节点创建成功后，泰尔和海银的PDB不能open，会报某个undo表空间被占用。​ 拓邦启动之后自动变为受限模式 解决过程： undo被占用，先考虑了新增节点的默认undo是否是执行被占用undo的，发现不是，都有自己的默认undo表空间 考虑能否释放undo，PDB1被占用的undo不是任何节点的默认undo，因此考虑删除，发现删除不掉，有未提交事务(这个问题没解决) PDB2被占用的undo是节点2使用的undo，考虑替换undo之后，无法删除被占用的undo 开始考虑为什么节点三的pdb会去用其他的undo表空间，理论上应该用自己的undo表空间 在可用节点查看已存在的undo，发现节点三的undo表空间不存在 查看alert日志，发现在实例创建时，节点3的undo表空间创建失败 怀疑是因为节点三的undo创建失败，自动去查找已存在的.undo。(注意，是.undo，还需要验证，不过PDB3的也创建失败，但是没有尝试使用其他节点的undo，而是启动为受限模式了，并且每次启动都会尝试去创建undo)，创建不成功，会在alert报错 手动创建节点三的undo，并重新制定给节点三，启动成功，问题解决。]]></content>
+      <categories>
+        <category>oracle</category>
+        <category>undo</category>
+      </categories>
+      <tags>
+        <tag>oracle</tag>
+        <tag>RAC</tag>
+        <tag>UNDO</tag>
+        <tag>ISSUE</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[python常见错误]]></title>
+    <url>%2F2018%2F08%2F29%2Fpython%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%2F</url>
+    <content type="text"><![CDATA[前言记录一些奇葩问题 Python List 遍历问题1234567alist=[1,2,3,4,5,6]for i in alist: print i alist.remove(i) 135 原因使用for i in list的方式遍历列表时，使用的是下标操作，remove使用的是值操作，最初alist的值为[1,2,3,4,5,6] 循环的第一次，下标指向0，此时打印出来的值为1，执行remove之后，列表变为[2,3,4,5,6] 此时进行循环的第二次的时候，下标为1，但是alist列表下标为1的位置的值变为了3 后面以此类推。]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[brainwave]]></title>
     <url>%2F2018%2F06%2F26%2Fbrainwave%2F</url>
     <content type="text"><![CDATA[待研究 Flashback Table UNDO_RETENTION Flashback Drop Flashback Database Media Recovery]]></content>
@@ -50,7 +76,7 @@
   <entry>
     <title><![CDATA[shell 编程]]></title>
     <url>%2F2018%2F01%2F12%2Fshell-%E7%BC%96%E7%A8%8B%2F</url>
-    <content type="text"><![CDATA[描述记录shell编程出现的坑和一些常用的语法 SHELL 参数 ${parameter:?word} 当parameter指示的参数没有被设值的时候，将会通过标准错误的方式显示word中的语句。 shell中各种括号的使用记录小括号(又称圆括号)单小括号 新开一个进程来执行命令 如图所示，括号中的命令将会新开一个子shell顺序执行，所以括号中的变量不能够被脚本余下的部分使用。括号中多个命令之间用分号隔开，最后一个命令可以没有分号，各命令和括号之间不必有空格。 作为$()来使用用于将()中的命令执行的结果替换回原来的位置 用于初始化数组。如：array=(a b c d) 双小括号 整数扩展。这种扩展计算是整数型的计算，不支持浮点型。((exp))结构扩展并计算一个算术表达式的值，如果表达式的结果为0，那么返回的退出状态码为1，或者 是”假”，而一个非零值的表达式所返回的退出状态码将为0，或者是”true”。若是逻辑判断，表达式exp为真则为1,假则为0 123456789101112[root@zabbix-server ~]# NUM=0[root@zabbix-server ~]# if (($NUM));then echo true;else echo false;fifalse[root@zabbix-server ~]# NUM=1[root@zabbix-server ~]# if (($NUM));then echo true;else echo false;fitrue[root@zabbix-server ~]# if ((1&gt;2));then echo true;else echo false;fifalse[root@zabbix-server ~]# if ((1&lt;2));then echo true;else echo false;fitrue[root@zabbix-server ~]# if ((1==2));then echo true;else echo false;fifalse 只要括号中的运算符、表达式符合C语言运算规则，都可用在\$((exp))中，甚至是三目运算符。作不同进位(如二进制、八进制、十六进制)运算时，输出结果全都自动转化成了十进制。 12[root@zabbix-server ~]# echo $((16#10))16 做数学运算 12345678910111213[root@zabbix-server ~]# a=1[root@zabbix-server ~]# ((a++))[root@zabbix-server ~]# echo $a2[root@zabbix-server ~]# ((a--))[root@zabbix-server ~]# echo $a1[root@zabbix-server ~]# ((a=a+2))[root@zabbix-server ~]# echo $a3[root@zabbix-server ~]# ((a=a*2))[root@zabbix-server ~]# echo $a6 常用于算术运算比较，双括号中的变量可以不使用$符号前缀。括号内支持多个表达式用逗号分开。 只要括号中的表达式符合C语言运算规则,比如可以直接使用for((i=0;i&lt;5;i++)) 特殊公式1echo $&#123;ZABBIX_SOURCE_DIR:=zabbix-3.4.8&#125; 作用是如果ZABBIX_SOURCE_DIR不为空则输出$ZABBIX_SOURCE_DIR，否则输出zabbix-3.4.8，同时把zabbix-3.4.8赋值给ZABBIX_SOURCE_DIR。 执行命令时不走alias 关于Linux的拷贝命令我们都知道cp的参数 -f的意思是： -f, –force if an existing destination file cannot be opened, remove it and try again 也就是说-f可以覆盖目的目录下有的文件， 但你有没有发现过这种情况，即使使用了-f也无法覆盖？ 原因何在呢？ 默认cp命令是有别名(alias cp=’cp -i’)的,无法强制覆盖,即使你用 -f 参数也无法强制覆盖文件。 可以使用\cp 执行cp命令时不走alias \cp * -rf ../../test 网上还有一种解决方法：临时取消cp的alias 123&gt;#unalias cp&gt;#cp a /test/a&gt;]]></content>
+    <content type="text"><![CDATA[描述记录shell编程出现的坑和一些常用的语法 SHELL 参数 ${parameter:?word} 当parameter指示的参数没有被设值的时候，将会通过标准错误的方式显示word中的语句。 shell中各种括号的使用记录小括号(又称圆括号)单小括号 新开一个进程来执行命令 如图所示，括号中的命令将会新开一个子shell顺序执行，所以括号中的变量不能够被脚本余下的部分使用。括号中多个命令之间用分号隔开，最后一个命令可以没有分号，各命令和括号之间不必有空格。 作为$()来使用用于将()中的命令执行的结果替换回原来的位置 用于初始化数组。如：array=(a b c d) 双小括号 整数扩展。这种扩展计算是整数型的计算，不支持浮点型。((exp))结构扩展并计算一个算术表达式的值，如果表达式的结果为0，那么返回的退出状态码为1，或者 是”假”，而一个非零值的表达式所返回的退出状态码将为0，或者是”true”。若是逻辑判断，表达式exp为真则为1,假则为0 123456789101112[root@zabbix-server ~]# NUM=0[root@zabbix-server ~]# if (($NUM));then echo true;else echo false;fifalse[root@zabbix-server ~]# NUM=1[root@zabbix-server ~]# if (($NUM));then echo true;else echo false;fitrue[root@zabbix-server ~]# if ((1&gt;2));then echo true;else echo false;fifalse[root@zabbix-server ~]# if ((1&lt;2));then echo true;else echo false;fitrue[root@zabbix-server ~]# if ((1==2));then echo true;else echo false;fifalse 只要括号中的运算符、表达式符合C语言运算规则，都可用在\$((exp))中，甚至是三目运算符。作不同进位(如二进制、八进制、十六进制)运算时，输出结果全都自动转化成了十进制。 12[root@zabbix-server ~]# echo $((16#10))16 做数学运算 12345678910111213[root@zabbix-server ~]# a=1[root@zabbix-server ~]# ((a++))[root@zabbix-server ~]# echo $a2[root@zabbix-server ~]# ((a--))[root@zabbix-server ~]# echo $a1[root@zabbix-server ~]# ((a=a+2))[root@zabbix-server ~]# echo $a3[root@zabbix-server ~]# ((a=a*2))[root@zabbix-server ~]# echo $a6 常用于算术运算比较，双括号中的变量可以不使用$符号前缀。括号内支持多个表达式用逗号分开。 只要括号中的表达式符合C语言运算规则,比如可以直接使用for((i=0;i&lt;5;i++)) 特殊公式1echo $&#123;ZABBIX_SOURCE_DIR:=zabbix-3.4.8&#125; 作用是如果ZABBIX_SOURCE_DIR不为空则输出$ZABBIX_SOURCE_DIR，否则输出zabbix-3.4.8，同时把zabbix-3.4.8赋值给ZABBIX_SOURCE_DIR。 执行命令时不走alias 关于Linux的拷贝命令我们都知道cp的参数 -f的意思是： -f, –force if an existing destination file cannot be opened, remove it and try again 也就是说-f可以覆盖目的目录下有的文件， 但你有没有发现过这种情况，即使使用了-f也无法覆盖？ 原因何在呢？ 默认cp命令是有别名(alias cp=’cp -i’)的,无法强制覆盖,即使你用 -f 参数也无法强制覆盖文件。 可以使用\cp 执行cp命令时不走alias \cp * -rf ../../test 网上还有一种解决方法：临时取消cp的alias 123&gt;#unalias cp&gt;#cp a /test/a&gt; 常用的判断 –b 当file存在并且是块文件时返回真 -c 当file存在并且是字符文件时返回真 -d 当pathname存在并且是一个目录时返回真 -e 当pathname指定的文件或目录存在时返回真 -f 当file存在并且是正规文件时返回真 -g 当由pathname指定的文件或目录存在并且设置了SGID位时返回为真 -h 当file存在并且是符号链接文件时返回真，该选项在一些老系统上无效 -k 当由pathname指定的文件或目录存在并且设置了“粘滞”位时返回真 -p 当file存在并且是命令管道时返回为真 -r 当由pathname指定的文件或目录存在并且可读时返回为真 -s 当file存在文件大小大于0时返回真 -u 当由pathname指定的文件或目录存在并且设置了SUID位时返回真 -w 当由pathname指定的文件或目录存在并且可执行时返回真。一个目录为了它的内容被访问必然是可执行的。 -o 当由pathname指定的文件或目录存在并且被子当前进程的有效用户ID所指定的用户拥有时返回真。 -eq 等于 -ne 不等于 -gt 大于 -lt 小于 -le 小于等于 -ge 大于等于 -z 空串 = 两个字符相等 != 两个字符不等 -n 非空串]]></content>
       <categories>
         <category>shell</category>
       </categories>

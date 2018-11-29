@@ -336,6 +336,341 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/11/17/Performing-RMAN-Recovery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shijie Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShijieQin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/17/Performing-RMAN-Recovery/" itemprop="url">Performing RMAN Recovery</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-17T11:14:10+08:00">
+                2017-11-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/rman/" itemprop="url" rel="index">
+                    <span itemprop="name">rman</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/11/17/Performing-RMAN-Recovery/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/11/17/Performing-RMAN-Recovery/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/11/17/Performing-RMAN-Recovery/" class="leancloud_visitors" data-flag-title="Performing RMAN Recovery">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="安装数据库软件-不需要安装实例"><a href="#安装数据库软件-不需要安装实例" class="headerlink" title="安装数据库软件(不需要安装实例)"></a>安装数据库软件(不需要安装实例)</h3><p>略</p>
+<h3 id="创建对应路径-与原库路径一致"><a href="#创建对应路径-与原库路径一致" class="headerlink" title="创建对应路径(与原库路径一致)"></a>创建对应路径(与原库路径一致)</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">mkdir -p /u01/app/oracle/oradata/TEST</div><div class="line">mkdir -p /u01/app/oracle/fast_recovery_area</div><div class="line">mkdir -p /u01/app/oracle/admin/TEST</div><div class="line">mkdir /u01/app/oracle/admin/TEST/adump</div><div class="line">mkdir /u01/app/oracle/admin/TEST/bdump</div><div class="line">mkdir /u01/app/oracle/admin/TEST/cdump</div><div class="line">mkdir /u01/app/oracle/admin/TEST/ddump</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/19A9B2E4ED836CFCE0537680A8C03E8F/DATAFILE</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/1A325228C22837A9E0537680A8C0AB5A/DATAFILE</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/1B5D770684A12982E0537680A8C00768/DATAFILE</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/25C07163596B0AD0E0537680A8C0EAE1/DATAFILE</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/268AC0DAD4617497E0537680A8C0152A/DATAFILE</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/2CB869B96579626EE0530C30A8C0E46C/DATAFILE</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/2E2B9591B4C13CC9E0537680A8C09CCF/DATAFILE</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/347488B0A2DA5C21E0537680A8C0E0CA/DATAFILE</div><div class="line">mkdir -p /u01/app/oracle/oradata/TEST/BCG/DATAFILE</div><div class="line">mkdir /u01/app/oracle/oradata/TEST/CONTROLFILE</div><div class="line">mkdir /u01/app/oracle/oradata/TEST/DATAFILE</div></pre></td></tr></table></figure>
+<h3 id="开始恢复"><a href="#开始恢复" class="headerlink" title="开始恢复"></a>开始恢复</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/17/Performing-RMAN-Recovery/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/10/19/rebuild-oracle-password-file/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shijie Qin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/cat.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ShijieQin">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/19/rebuild-oracle-password-file/" itemprop="url">rebuild oracle password file</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-19T15:47:40+08:00">
+                2017-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/oracle/" itemprop="url" rel="index">
+                    <span itemprop="name">oracle</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            <!--noindex-->
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/10/19/rebuild-oracle-password-file/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count hc-comment-count" data-xid="2017/10/19/rebuild-oracle-password-file/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+              <!--/noindex-->
+            
+          
+
+          
+          
+             <span id="/2017/10/19/rebuild-oracle-password-file/" class="leancloud_visitors" data-flag-title="rebuild oracle password file">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h3 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h3><p>之前通过rman将一台生产库恢复到了另外一台服务器上。今天使用sys用户连接数据库时，一直报用户名密码错误，后台通过<strong>sys / as sysdba</strong>登录服务器之后，使用<strong>alter user sys identified by newpassword</strong>修改密码之后依然不能使用密码登录数据库，因此才有如下解决方式。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/19/rebuild-oracle-password-file/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://shijieqin.github.io/2017/07/19/create-LVM-disk/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1550,7 +1885,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1561,7 +1896,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">29</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1572,7 +1907,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-count">34</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

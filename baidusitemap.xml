@@ -4,6 +4,55 @@
 
     
   <url>
+    <loc>https://shijieqin.github.io/2018/11/29/oracle12-2rac%E6%96%B0%E5%A2%9E%E8%8A%82%E7%82%B9%E5%90%8E%E5%87%BA%E7%8E%B0undo%E8%A2%AB%E5%8D%A0%E7%94%A8/</loc>
+    <lastmod>2018-11-29T02:03:27.000Z</lastmod>
+    <data>
+        <display>
+        <title>oracle12.2rac新增节点后出现undo被占用</title>
+        <pubTime>2018-11-29T02:03:27.000Z</pubTime>
+        
+        <tag>oracle</tag>
+         
+        <tag>RAC</tag>
+         
+        <tag>UNDO</tag>
+         
+        <tag>ISSUE</tag>
+         
+         
+           
+             
+              <breadCrumb title="oracle" url="https://shijieqin.github.io/categories/oracle/"/>
+          
+             
+              <breadCrumb title="undo" url="https://shijieqin.github.io/categories/oracle/undo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://shijieqin.github.io/2018/08/29/python%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</loc>
+    <lastmod>2018-08-29T02:43:48.000Z</lastmod>
+    <data>
+        <display>
+        <title>python常见错误</title>
+        <pubTime>2018-08-29T02:43:48.000Z</pubTime>
+        
+        <tag>python</tag>
+         
+         
+           
+             
+              <breadCrumb title="python" url="https://shijieqin.github.io/categories/python/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://shijieqin.github.io/2018/06/26/brainwave/</loc>
     <lastmod>2018-06-26T03:00:37.000Z</lastmod>
     <data>
