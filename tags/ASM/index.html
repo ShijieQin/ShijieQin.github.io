@@ -100,7 +100,7 @@
 <meta name="description" content="If I can do, I do!">
 <meta property="og:type" content="website">
 <meta property="og:title" content="ShijieQin">
-<meta property="og:url" content="https://shijieqin.github.io/tags/asm/index.html">
+<meta property="og:url" content="https://shijieqin.github.io/tags/ASM/index.html">
 <meta property="og:site_name" content="ShijieQin">
 <meta property="og:description" content="If I can do, I do!">
 <meta property="og:locale" content="zh-Hans">
@@ -134,13 +134,13 @@
 
 
 
-  <link rel="canonical" href="https://shijieqin.github.io/tags/asm/"/>
+  <link rel="canonical" href="https://shijieqin.github.io/tags/ASM/"/>
 
 
 
 
 
-  <title>标签: asm | ShijieQin</title>
+  <title>标签: ASM | ShijieQin</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -326,7 +326,7 @@
 
   <div id="posts" class="posts-collapse">
     <div class="collection-title">
-      <h1>asm<small>标签</small>
+      <h1>ASM<small>标签</small>
       </h1>
     </div>
 
@@ -338,9 +338,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2018/01/11/asmlib创建的磁盘在线扩容/" itemprop="url">
+            <a class="post-title-link" href="/2017/11/27/abc/" itemprop="url">
               
-                <span itemprop="name">asmlib创建的磁盘在线扩容</span>
+                <span itemprop="name">Centos6安装ASMLIB</span>
               
             </a>
         
@@ -348,9 +348,9 @@
 
       <div class="post-meta">
         <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-11T19:35:45+08:00"
-              content="2018-01-11" >
-          01-11
+              datetime="2017-11-27T16:30:19+08:00"
+              content="2017-11-27" >
+          11-27
         </time>
       </div>
 
@@ -404,7 +404,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -415,7 +415,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">30</span>
+                <span class="site-state-item-count">31</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -426,7 +426,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">36</span>
+                <span class="site-state-item-count">37</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -517,7 +517,7 @@
         <div class="copyright" >
   
   &copy;  2017 - 
-  <span itemprop="copyrightYear">2018</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -536,6 +536,32 @@
   </a>
 </div>
 
+
+  <script src='https://unpkg.com/mermaid@<%= theme.mermaid.version %>/dist/mermaid.min.js'></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({theme: 'forest'});
+    }
+  </script>
+
+<script src='https://cdn.rawgit.com/fex-team/kity/dev/dist/kity.min.js'></script>
+<script src='kityminder.core.min.js'></script>
+<script>
+setTimeout(function() {
+        var minder = new kityminder.Minder({
+            renderTo: '.mindmap'
+        });
+        var markdownText = $('.mindmap').text().trim();
+        $('.mindmap p').each(function(index, element) {
+            element.style.display = 'none';
+        });
+        minder.importData('markdown', markdownText);
+        minder.disable();
+        minder.execCommand('hand');
+    },
+    3000
+)
+</script>
 
         
 <div class="busuanzi-count">
@@ -1144,6 +1170,11 @@
       }
       var s = document.getElementsByTagName("script")[0];
       s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+</body>
+</html>
+e(bp, s);
   })();
 </script>
 </body>
