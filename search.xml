@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[kube-scheduler]]></title>
     <url>%2F2019%2F01%2F08%2Fkube-scheduler%2F</url>
-    <content type="text"><![CDATA[前言只是为了便于自己理解和记忆做的记录，大多摘自网站 https://feisky.xyz/kubernetes-handbook/ kube-schedulerkube-scheduler 负责分配调度 Pod 到集群内的节点上，它监听 kube-apiserver，查询还未分配 Node 的 Pod，然后根据调度策略为这些 Pod 分配节点（更新 Pod 的 NodeName 字段）。 调度器需要充分考虑诸多的因素： 公平调度 资源高效利用 QoS affinity 和 anti-affinity 数据本地化（data locality） 内部负载干扰（inter-workload interference） deadlines 指定 Node 节点调度123456789&#123;% pullquote mindmap %&#125;#主题##一级分支###二级分支##一级分支##一级分支###二级分支####三级分支&#123;% endpullquote %&#125;]]></content>
+    <content type="text"><![CDATA[前言只是为了便于自己理解和记忆做的记录，大多摘自网站 https://feisky.xyz/kubernetes-handbook/ kube-schedulerkube-scheduler 负责分配调度 Pod 到集群内的节点上，它监听 kube-apiserver，查询还未分配 Node 的 Pod，然后根据调度策略为这些 Pod 分配节点（更新 Pod 的 NodeName 字段）。 调度器需要充分考虑诸多的因素： 公平调度 资源高效利用 QoS affinity 和 anti-affinity 数据本地化（data locality） 内部负载干扰（inter-workload interference） deadlines 指定 Node 节点调度#主题 ##一级分支 ###二级分支 ##一级分支 ##一级分支 ###二级分支 ####三级分支]]></content>
       <categories>
         <category>k8s学习笔记</category>
       </categories>
